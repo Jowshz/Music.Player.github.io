@@ -1,4 +1,4 @@
-# Music.Player.github.io
+# Music Player
 Music
 
 # To Do List 
