@@ -116,6 +116,22 @@ float searchX = appWidth * 6.1/16;
 float searchY = appHeight * 0.3/12;
 float searchWidth = appWidth * 4/16;
 float searchHeight = appHeight * 0.9/12;
+
+float music1X1 = appWidth * 2/16;
+float music1Y1 = appHeight * 10.5/12;
+float music2X2 = appWidth * 16/16;
+float music2Y2 = appHeight * 10.5/12;
+
+float menu1X1 = appWidth * 2/16;
+float menu1Y1 = appHeight * 1.5/12;
+float menu2X2 = appWidth * 2/16;
+float menu2Y2 = appHeight * 12/12;
+
+float bar1X1 = appWidth * 0/16;
+float bar1Y1 = appHeight * 1.5/12;
+float bar2X2 = appWidth * 16/16;
+float bar2Y2 = appHeight * 1.5/12;
+
 //
 //DIVs: for human confirmation of formulaic and variable accuracy
 rect(play1X, play2Y, play1Width, play2Height);
@@ -135,6 +151,9 @@ rect(home1X, home1Y, home1Width, home1Height);
 rect(home2X, home2Y, home2Width, home2Height);
 rect(magX, magY, magWidth, magHeight);
 rect(searchX, searchY, searchWidth, searchHeight);
+line(music1X1, music1Y1, music2X2, music2Y2);
+line(menu1X1, menu1Y1, menu2X2, menu2Y2);
+line(bar1X1, bar1Y1, bar2X2, bar2Y2);
 //
 //Library of Symbols, requires DIVs
 //rect(stopX, stopY, stopWidth, stopHeight);
