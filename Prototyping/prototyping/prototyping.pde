@@ -106,6 +106,16 @@ float home2X = appWidth * 0.8/16;
 float home2Y = appHeight * 1.8/12;
 float home2Width = appWidth * 1.1/16;
 float home2Height = appHeight * 0.6/12;
+
+float magX = appWidth * 5/16;
+float magY = appHeight * 0.3/12;
+float magWidth = appWidth * 0.9/16;
+float magHeight = appHeight * 0.9/12;
+
+float searchX = appWidth * 6.1/16;
+float searchY = appHeight * 0.3/12;
+float searchWidth = appWidth * 4/16;
+float searchHeight = appHeight * 0.9/12;
 //
 //DIVs: for human confirmation of formulaic and variable accuracy
 rect(play1X, play2Y, play1Width, play2Height);
@@ -123,6 +133,8 @@ rect(textX, textY, textWidth, textHeight);
 rect(imageX, imageY, imageWidth, imageHeight);
 rect(home1X, home1Y, home1Width, home1Height);
 rect(home2X, home2Y, home2Width, home2Height);
+rect(magX, magY, magWidth, magHeight);
+rect(searchX, searchY, searchWidth, searchHeight);
 //
 //Library of Symbols, requires DIVs
 //rect(stopX, stopY, stopWidth, stopHeight);
