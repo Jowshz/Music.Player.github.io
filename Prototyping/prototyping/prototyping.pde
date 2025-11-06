@@ -132,6 +132,18 @@ float bar1Y1 = appHeight * 1.5/12;
 float bar2X2 = appWidth * 16/16;
 float bar2Y2 = appHeight * 1.5/12;
 
+float forTriX1 = forX + forWidth * 1/4;
+float forTriY1 = forY + forHeight * 1/4;
+float forTriX2 = forX + forWidth * 1/2;
+float forTriY2 = forY + forHeight * 1/2;
+float forTriX3 = forX + forWidth * 1/4;
+float forTriY3 = forY + forHeight * 3/4;
+
+float forRectX = forX + forWidth * 9/16;   
+float forRectY = forY + forHeight * 1/2;   
+float forRectWidth = forWidth * 1/8;       
+float forRectHeight = forHeight * 1/2;     
+
 //
 //DIVs: for human confirmation of formulaic and variable accuracy
 rect(play1X, play2Y, play1Width, play2Height);
@@ -158,5 +170,8 @@ line(bar1X1, bar1Y1, bar2X2, bar2Y2);
 //Library of Symbols, requires DIVs
 //rect(stopX, stopY, stopWidth, stopHeight);
 triangle(playX1, playY1, playX2, playY2, playX3, playY3); //Group of Variables
+triangle(forTriX1, forTriY1, forTriX2, forTriY2, forTriX3, forTriY3);
 line(mute1X1, mute1Y1, mute2X2, mute2Y2);
 line(mute3X1, mute3Y1, mute4X2, mute4Y2);
+rectMode(CENTER);
+rect(forRectX, forRectY, forRectWidth, forRectHeight);
