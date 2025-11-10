@@ -144,6 +144,59 @@ float forRectY = forY + forHeight * 1/2;
 float forRectWidth = forWidth * 1/8;       
 float forRectHeight = forHeight * 1/2;     
 
+float backTriX1 = backX + backWidth * 3/4;
+float backTriY1 = backY + backHeight * 1/4;
+float backTriX2 = backX + backWidth * 1/2;
+float backTriY2 = backY + backHeight * 1/2;
+float backTriX3 = backX + backWidth * 3/4;
+float backTriY3 = backY + backHeight * 3/4;
+
+float backRectX = backX + backWidth * 7/16;
+float backRectY = backY + backHeight * 1/2;
+float backRectWidth = backWidth * 1/8;
+float backRectHeight = backHeight * 1/2;
+
+float centerXFrac = 1/4f;
+float centerYFrac = 1/4f;
+float diameterFrac = 1/16f;  
+
+float dotX = queueX + queueWidth * centerXFrac;
+float dotY = queueY + queueHeight * centerYFrac;
+float dotD = queueWidth * diameterFrac;
+
+centerYFrac = 2/4f;
+float dot2X = queueX + queueWidth * centerXFrac;
+float dot2Y = queueY + queueHeight * centerYFrac;
+float dot2D = queueWidth * diameterFrac;
+
+centerYFrac = 3/4f;
+float dot3X = queueX + queueWidth * centerXFrac;
+float dot3Y = queueY + queueHeight * centerYFrac;
+float dot3D = queueWidth * diameterFrac;
+
+float quelineX1 = queueX + queueWidth * 3/8;
+float quelineY1 = queueY + queueHeight * 1/4;
+float quelineX2 = queueX + queueWidth * 3/4;
+float quelineY2 = queueY + queueHeight * 1/4;
+
+float queline2X1 = queueX + queueWidth * 3/8;
+float queline2Y1 = queueY + queueHeight * 2/4;
+float queline2X2 = queueX + queueWidth * 3/4;
+float queline2Y2 = queueY + queueHeight * 2/4;
+
+float queline3X1 = queueX + queueWidth * 3/8;
+float queline3Y1 = queueY + queueHeight * 3/4;
+float queline3X2 = queueX + queueWidth * 3/4;
+float queline3Y2 = queueY + queueHeight * 3/4;
+
+float lyrectX = lyrX + lyrWidth * 1/4;
+float lyrectY = lyrY + lyrHeight * 1/4;
+float lyrectWidth = lyrWidth * 2/4;
+float lyrectHeight = lyrHeight * 2/4;
+
+
+
+
 //
 //DIVs: for human confirmation of formulaic and variable accuracy
 rect(play1X, play2Y, play1Width, play2Height);
@@ -171,7 +224,17 @@ line(bar1X1, bar1Y1, bar2X2, bar2Y2);
 //rect(stopX, stopY, stopWidth, stopHeight);
 triangle(playX1, playY1, playX2, playY2, playX3, playY3); //Group of Variables
 triangle(forTriX1, forTriY1, forTriX2, forTriY2, forTriX3, forTriY3);
+triangle(backTriX1, backTriY1, backTriX2, backTriY2, backTriX3, backTriY3);
 line(mute1X1, mute1Y1, mute2X2, mute2Y2);
 line(mute3X1, mute3Y1, mute4X2, mute4Y2);
 rectMode(CENTER);
 rect(forRectX, forRectY, forRectWidth, forRectHeight);
+rectMode(CENTER);
+rect(backRectX, backRectY, backRectWidth, backRectHeight);
+ellipse(dotX, dotY, dotD, dotD);
+ellipse(dot2X, dot2Y, dot2D, dot2D);
+ellipse(dot3X, dot3Y, dot3D, dot3D);
+line(quelineX1, quelineY1, quelineX2, quelineY2);
+line(queline2X1, queline2Y1, queline2X2, queline2Y2);
+line(queline3X1, queline3Y1, queline3X2, queline3Y2);
+rect(lyrectX, lyrectY, lyrectWidth, lyrectHeight);
