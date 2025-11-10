@@ -189,13 +189,27 @@ float queline3Y1 = queueY + queueHeight * 3/4;
 float queline3X2 = queueX + queueWidth * 3/4;
 float queline3Y2 = queueY + queueHeight * 3/4;
 
-float lyrectX = lyrX + lyrWidth * 1/4;
-float lyrectY = lyrY + lyrHeight * 1/4;
-float lyrectWidth = lyrWidth * 2/4;
-float lyrectHeight = lyrHeight * 2/4;
+
+float lyrectX = lyrX + lyrWidth * 1/4f;
+float lyrectY = lyrY + lyrHeight * 1/8f;
+float lyrectWidth = lyrWidth * 1/2f;   
+float lyrectHeight = lyrHeight * 6/8f; 
+
+float lyrline1X1 = lyrectX + lyrectWidth * 1/4;
+float lyrline1Y1 = lyrectY + lyrectHeight * 1/4;
+float lyrline1X2 = lyrectX + lyrectWidth * 3/4;
+float lyrline1Y2 = lyrectY + lyrectHeight * 1/4;
+
+float lyrline2X1 = lyrectX + lyrectWidth * 1/4;
+float lyrline2Y1 = lyrectY + lyrectHeight * 1/2;
+float lyrline2X2 = lyrectX + lyrectWidth * 3/4;
+float lyrline2Y2 = lyrectY + lyrectHeight * 1/2;
 
 
-
+float lyrline3X1 = lyrectX + lyrectWidth * 1/4;
+float lyrline3Y1 = lyrectY + lyrectHeight * 3/4;
+float lyrline3X2 = lyrectX + lyrectWidth * 3/4;
+float lyrline3Y2 = lyrectY + lyrectHeight * 3/4;
 
 //
 //DIVs: for human confirmation of formulaic and variable accuracy
@@ -229,8 +243,8 @@ line(mute1X1, mute1Y1, mute2X2, mute2Y2);
 line(mute3X1, mute3Y1, mute4X2, mute4Y2);
 rectMode(CENTER);
 rect(forRectX, forRectY, forRectWidth, forRectHeight);
-rectMode(CENTER);
 rect(backRectX, backRectY, backRectWidth, backRectHeight);
+rectMode(CORNER);
 ellipse(dotX, dotY, dotD, dotD);
 ellipse(dot2X, dot2Y, dot2D, dot2D);
 ellipse(dot3X, dot3Y, dot3D, dot3D);
@@ -238,3 +252,6 @@ line(quelineX1, quelineY1, quelineX2, quelineY2);
 line(queline2X1, queline2Y1, queline2X2, queline2Y2);
 line(queline3X1, queline3Y1, queline3X2, queline3Y2);
 rect(lyrectX, lyrectY, lyrectWidth, lyrectHeight);
+line(lyrline1X1, lyrline1Y1, lyrline1X2, lyrline1Y2);
+line(lyrline2X1, lyrline2Y1, lyrline2X2, lyrline2Y2);
+line(lyrline3X1, lyrline3Y1, lyrline3X2, lyrline3Y2);
