@@ -211,6 +211,41 @@ float lyrline3Y1 = lyrectY + lyrectHeight * 3/4;
 float lyrline3X2 = lyrectX + lyrectWidth * 3/4;
 float lyrline3Y2 = lyrectY + lyrectHeight * 3/4;
 
+float soundbutX = soundX + soundWidth * 1/4f; 
+float soundbutY = soundY + soundHeight * 7/16f; 
+
+float soundbut2X = soundX + soundWidth * 3/8f; 
+float soundbut2Y = soundY + soundHeight * 5/16f; 
+
+float soundbut3X = soundX + soundWidth * 1/2f; 
+float soundbut3Y = soundY + soundHeight * 1/2f; 
+
+float soundbut4X = soundX + soundWidth * 3/8f; 
+float soundbut4Y = soundY + soundHeight * 11/16f; 
+
+float soundbut5X = soundX + soundWidth * 1/4f; 
+float soundbut5Y = soundY + soundHeight * 9/16f;
+
+float soundln1X1 = soundX + soundWidth * 4/8; 
+float soundln1Y1 = soundY + soundHeight * 3/8; 
+float soundln1X2 = soundX + soundWidth * 9/16; 
+float soundln1Y2 = soundY + soundHeight * 4/8;
+
+float soundln2X1 = soundX + soundWidth * 9/16; 
+float soundln2Y1 = soundY + soundHeight * 4/8; 
+float soundln2X2 = soundX + soundWidth * 4/8; 
+float soundln2Y2 = soundY + soundHeight * 5/8;
+
+float soundln3X1 = soundX + soundWidth * 5/8; 
+float soundln3Y1 = soundY + soundHeight * 3/8; 
+float soundln3X2 = soundX + soundWidth * 11/16; 
+float soundln3Y2 = soundY + soundHeight * 4/8;
+
+float soundln4X1 = soundX + soundWidth * 11/16; 
+float soundln4Y1 = soundY + soundHeight * 4/8; 
+float soundln4X2 = soundX + soundWidth * 5/8; 
+float soundln4Y2 = soundY + soundHeight * 5/8;
+
 //
 //DIVs: for human confirmation of formulaic and variable accuracy
 rect(play1X, play2Y, play1Width, play2Height);
@@ -255,3 +290,14 @@ rect(lyrectX, lyrectY, lyrectWidth, lyrectHeight);
 line(lyrline1X1, lyrline1Y1, lyrline1X2, lyrline1Y2);
 line(lyrline2X1, lyrline2Y1, lyrline2X2, lyrline2Y2);
 line(lyrline3X1, lyrline3Y1, lyrline3X2, lyrline3Y2);
+beginShape(); 
+vertex(soundbutX, soundbutY); 
+vertex(soundbut2X, soundbut2Y); 
+vertex(soundbut3X, soundbut3Y); 
+vertex(soundbut4X, soundbut4Y);
+vertex(soundbut5X, soundbut5Y); 
+endShape(CLOSE); 
+line(soundln1X1, soundln1Y1, soundln1X2, soundln1Y2); 
+line(soundln2X1, soundln2Y1, soundln2X2, soundln2Y2); 
+line(soundln3X1, soundln3Y1, soundln3X2, soundln3Y2);
+line(soundln4X1, soundln4Y1, soundln4X2, soundln4Y2);

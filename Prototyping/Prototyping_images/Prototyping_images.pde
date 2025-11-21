@@ -10,4 +10,8 @@ int appHeight = displayHeight; //height
 println("Display VARS", "appWidth:"+appWidth, "appHeight:"+appHeight, "\n\t\t\t\t\t\t\tFullScreendisplayWidth:"+displayWidth, "displayHeight:"+displayHeight, "width:"+width, "Height:"+height);
 //
 //Image Apsect Ratio Vars & Algorithm
-// Directory or Pathway
+// Directory or Pathway, Concatenation
+String upArrow = "../../"; 
+String folder = "Images";
+String daniel = "daniel";
+String fileExtensionJPG = ".jpg" ;
