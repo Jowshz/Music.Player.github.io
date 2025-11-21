@@ -18,10 +18,10 @@ float imageDivHeight = appHeight * 5/12;
 //Image Apsect Ratio Vars & Algorithm
 // Directory or Pathway, Concatenation
 String upArrow = "../../"; 
-String folder = "Images"; //**Awkward
+String imagefile = "Images/"; 
 String Copy = "Copy";
 String fileExtensionJPG = ".jpg" ;
-String imagePathway1 = upArrow + folder + Copy + fileExtensionJPG;
+String imagePathway1 = upArrow + imagefile + Copy + fileExtensionJPG;
 //println ("Copy Pathway:", imagePathway1);
 //Image Loading & Aspect Raio
 PImage image1 = loadImage( imagePathway1 );
