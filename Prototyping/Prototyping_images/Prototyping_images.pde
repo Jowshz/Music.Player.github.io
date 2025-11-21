@@ -3,15 +3,34 @@
 */
 //
 //Display
-//fullScreen(); //Landscape
-size(500, 700); //Portrait
+fullScreen(); //Landscape
+//size(500, 700); //Portrait
 int appWidth = displayWidth; //width
 int appHeight = displayHeight; //height
-println("Display VARS", "appWidth:"+appWidth, "appHeight:"+appHeight, "\n\t\t\t\t\t\t\tFullScreendisplayWidth:"+displayWidth, "displayHeight:"+displayHeight, "width:"+width, "Height:"+height);
+//println("Display VARS", "appWidth:"+appWidth, "appHeight:"+appHeight, "\n\t\t\t\t\tFullScreendisplayWidth:"+displayWidth, "displayHeight:"+displayHeight, "width:"+width, "Height:"+height);
+//
+//Population
+float imageDivX = appWidth * 2.4/16;
+float imageDivY = appHeight * 2/12; 
+float imageDivWidth = appWidth * 13/16;
+float imageDivHeight = appHeight * 5/12;
 //
 //Image Apsect Ratio Vars & Algorithm
 // Directory or Pathway, Concatenation
 String upArrow = "../../"; 
-String folder = "Images";
-String daniel = "daniel";
+String folder = "Images"; //**Awkward
+String Copy = "Copy";
 String fileExtensionJPG = ".jpg" ;
+String imagePathway1 = upArrow + folder + Copy + fileExtensionJPG;
+//println ("Copy Pathway:", imagePathway1);
+//Image Loading & Aspect Raio
+PImage image1 = loadImage( imagePathway1 );
+int imageWidth1 = 296; //Hardcoded
+int imageHeight1 = 170; //Hardcoded
+//Aspect Ratio
+//float image1ApsectRatio_GreaterOne = () ? : ;
+//
+//DIV
+rect( imageDivX, imageDivY, imageDivWidth, imageDivHeight );
+//
+image( image1, imageDivX, imageDivY, imageWidthAdjusted, imageHeightAdjusted );
