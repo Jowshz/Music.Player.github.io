@@ -7,7 +7,7 @@ fullScreen(); //Landscape
 //size(500, 700); //Portrait
 int appWidth = displayWidth; //width
 int appHeight = displayHeight; //height
-//println("Display VARS", "appWidth:"+appWidth, "appHeight:"+appHeight, "\n\t\t\t\t\tFullScreendisplayWidth:"+displayWidth, "displayHeight:"+displayHeight, "width:"+width, "Height:"+height);
+println("Display VARS", "appWidth:"+appWidth, "appHeight:"+appHeight, "\n\t\t\t\t\tFullScreendisplayWidth:"+displayWidth, "displayHeight:"+displayHeight, "width:"+width, "Height:"+height);
 //
 //Population
 float imageDivX = appWidth * 2.4/16;
@@ -28,9 +28,12 @@ PImage image1 = loadImage( imagePathway1 );
 int imageWidth1 = 296; //Hardcoded
 int imageHeight1 = 170; //Hardcoded
 //Aspect Ratio
-//float image1ApsectRatio_GreaterOne = () ? : ;
-//
+float image1ApsectRatio_GreaterOne = ( imageWidth1 >= imageHeight1) ? imageWidth1/imageHeight1 : imageHeight1/imageWidth1 ; //Ternary Operator
+//Hardcoded Greater-Than-One Aspect Raio
+println(image1ApsectRatio_GreaterOne);
 //DIV
 rect( imageDivX, imageDivY, imageDivWidth, imageDivHeight );
 //
-image( image1, imageDivX, imageDivY, imageWidthAdjusted, imageHeightAdjusted );
+image( image1, imageDivX, imageDivY, imageDivWidth, imageDivHeight );
+
+//imageWidthAdjusted imageHeightAdjusted
