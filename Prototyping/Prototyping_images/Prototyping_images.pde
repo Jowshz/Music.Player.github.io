@@ -32,6 +32,21 @@ float image1ApsectRatio_GreaterOne = ( imageWidth1 > imageHeight1) ? float(image
 //Hardcoded Greater-Than-One Aspect Raio
 //How to make image bigger or smaller
 println("Aspect Ration >1", image1ApsectRatio_GreaterOne, "Testing for Decimals, formula", imageWidth1/imageHeight1);
+//Algorithm Decisions (choice)
+//Aspect Ratio
+/*
+imageWidth1
+imageDivWidth
+imageHeight1
+imageDivHeight
+imageDivWidth, imageDivHeight
+*/
+//if () {} else {} //End IF Apsect Ratio
+
+
+
+
+
 //DIV
 rect( imageDivX, imageDivY, imageDivWidth, imageDivHeight );
 //
