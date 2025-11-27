@@ -26,20 +26,32 @@ String fileExtensionJPG = ".jpg" ;
 String imagePathway1 = upArrow + imagefile + Copy + fileExtensionJPG;
 //println ("Copy Pathway:", imagePathway1);
 //Image Loading & Aspect Raio
-PImage image1 = loadImage( imagePathway1 );
+//
+//Possible ERROR: NullPointerException
+PImage errorImage = loadImage( "error.png" );
+PImage image1 = loadImage( imagePathway1 ); //i.e. pathway mispelled
+if ( image1 == null )  {
+  println("NullPointerException on Image ... Spelling Mistake with Pathway Concatenation");
+  image1 = errorImage;
+  exit();
+}
 int imageWidth1 = 296; //Hardcoded
 int imageHeight1 = 170; //Hardcoded
 //Aspect Ratio
-float image1ApsectRatio_GreaterOne = ( imageWidth1 > imageHeight1) ? float(imageWidth1)/float(imageHeight1) : float(imageHeight1)/float(imageWidth1) ; //Ternary Operator
+float image1AspectRatio_GreaterOne = ( imageWidth1 > imageHeight1) ? float(imageWidth1)/float(imageHeight1) : float(imageHeight1)/float(imageWidth1) ; //Ternary Operator
 //Hardcoded Greater-Than-One Aspect Raio
 //How to make image bigger or smaller
-println("Aspect Ratio >1", image1ApsectRatio_GreaterOne, "Testing for Decimals, formula", imageWidth1/imageHeight1);
+println("Aspect Ratio >1", image1AspectRatio_GreaterOne, "Testing for Decimals, formula", imageWidth1/imageHeight1);
 //Algorithm Decisions (choice)
 float imageWidthAdjusted1 = imageDivWidth;
-float imageHeightAdjusted1 = ( imageWidth1 >= imageDivWidth ) ? imageWidthAdjusted1 * image1ApsectRatio_GreaterOne : imageWidthAdjusted1 / image1ApsectRatio_GreaterOne ;
+float imageHeightAdjusted1 = ( imageWidth1 >= imageDivWidth ) ? imageWidthAdjusted1 * image1AspectRatio_GreaterOne : imageWidthAdjusted1 / image1AspectRatio_GreaterOne ;
 if ( imageHeightAdjusted1 > imageDivHeight ) {
   println("Image doesn't fit, program ended ... Fatal Flaw, must be solved ... Image");
-  exit();
+  //exit();
+  while ( imageHeightAdjusted1>imageDivHeight ) {
+  imageWidthAdjusted1 *= 0.99;
+  imageHeightAdjusted1 = imageWidthAdjusted1/image1AspectRatio_GreaterOne;
+  }
   //
 }
 //
