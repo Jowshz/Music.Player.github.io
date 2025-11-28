@@ -5,7 +5,7 @@
 //
 //Display
 //fullScreen(); //Landscape
-size(500, 250); //Portrait
+size(500, 250); //Portrait 750
 int appWidth = width; //displayWidth
 int appHeight = height; //displayHeight
 //println("Display VARS", "appWidth:"+appWidth, "appHeight:"+appHeight,
@@ -57,11 +57,13 @@ if ( imageHeightAdjusted1 > imageDivHeight ) {
   } else {
     //EROR: Infinite Loop
     println("ERROR: infinite loop, Image Percent WHILE, value:", indexWhile);
-    exit(); //doesn't work, must force WHILE Stop
+    //exit(); //doesn't work, must force WHILE Stop
     imageHeightAdjusted1=imageDivHeight; //makes WHILE False, stops WHILE
   } //End Check Infinite loop
-  //imageWidthAdjusted1 *= 0.99;
-  //imageHeightAdjusted1 = imageWidthAdjusted1/image1AspectRatio_GreaterOne;
+  //ImageWidthAdjusted Percent v Pixel
+  imageWidthAdjusted1 *= 0.87; // -= 1;
+  imageHeightAdjusted1 = imageWidthAdjusted1/image1AspectRatio_GreaterOne;
+  println("Inspection of percent decrease:", imageWidthAdjusted1, imageHeightAdjusted1, imageDivHeight);
   } //END WHILE
   //
 } // END IF
