@@ -46,14 +46,25 @@ println("Aspect Ratio >1", image1AspectRatio_GreaterOne, "Testing for Decimals, 
 float imageWidthAdjusted1 = imageDivWidth;
 float imageHeightAdjusted1 = ( imageWidth1 >= imageDivWidth ) ? imageWidthAdjusted1 * image1AspectRatio_GreaterOne : imageWidthAdjusted1 / image1AspectRatio_GreaterOne ;
 if ( imageHeightAdjusted1 > imageDivHeight ) {
-  println("Image doesn't fit, program ended ... Fatal Flaw, must be solved ... Image");
+  println("Image doesn't fit, program ended ... Fatal Flaw, must be solved ... Image"); 
   //exit();
+  int indexWhile = 0; //Local Variable to IF-Statement
+  //xx WHILE Loops can run infinitely with an eror if not controlled
   while ( imageHeightAdjusted1>imageDivHeight ) {
-  imageWidthAdjusted1 *= 0.99;
-  imageHeightAdjusted1 = imageWidthAdjusted1/image1AspectRatio_GreaterOne;
-  }
+  println("Iteration of Percent WHILE Loop", indexWhile++); //prints value, then adds one, order is important in AP
+  if ( indexWhile < 10000 ) {
+    //Checking Image Size
+  } else {
+    //EROR: Infinite Loop
+    println("ERROR: infinite loop, Image Percent WHILE, value:", indexWhile);
+    exit(); //doesn't work, must force WHILE Stop
+    imageHeightAdjusted1=imageDivHeight; //makes WHILE False, stops WHILE
+  } //End Check Infinite loop
+  //imageWidthAdjusted1 *= 0.99;
+  //imageHeightAdjusted1 = imageWidthAdjusted1/image1AspectRatio_GreaterOne;
+  } //END WHILE
   //
-}
+} // END IF
 //
 //DIV
 rect( imageDivX, imageDivY, imageDivWidth, imageDivHeight );
