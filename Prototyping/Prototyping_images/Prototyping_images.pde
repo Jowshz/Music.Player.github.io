@@ -8,14 +8,14 @@ fullScreen(); //Landscape
 //size(500, 250); //Portrait 750
 int appWidth = displayWidth; //displayWidth width
 int appHeight = displayHeight; //displayHeight height
-//println("Display VARS", "appWidth:"+appWidth, "appHeight:"+appHeight,
-//println("\n\t\t\t\t\tFullScreendisplayWidth:"+displayWidth, "displayHeight:"+displayHeight, "width:"+width, "Height:"+height);
+//println("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tDisplay VARS", "appWidth:"+appWidth, "appHeight:"+appHeight);
+//println("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tFullScreendisplayWidth:"+displayWidth, "displayHeight:"+displayHeight, "width:"+width, "Height:"+height);
 //
 //Population
-float imageDivX = appWidth * 2.4/16;
-float imageDivY = appHeight * 2/12; 
-float imageDivWidth = appWidth * 13/16;
-float imageDivHeight = appHeight * 5/12;
+float EvilSkullX = appWidth * 2.4/16;
+float EvilSkullY = appHeight * 2/12; 
+float EvilSkullWidth = appWidth * 13/16;
+float EvilSkullHeight = appHeight * 5/12;
 //
 //Image Apsect Ratio Vars & Algorithm
 // Directory or Pathway, Concatenation
@@ -43,14 +43,14 @@ float image1AspectRatio_GreaterOne = ( imageWidth1 > imageHeight1) ? float(image
 //How to make image bigger or smaller
 println("Aspect Ratio >1", image1AspectRatio_GreaterOne, "Testing for Decimals, formula", imageWidth1/imageHeight1);
 //Algorithm Decisions (choice)
-float imageWidthAdjusted1 = imageDivWidth;
-float imageHeightAdjusted1 = ( imageWidth1 >= imageDivWidth ) ? imageWidthAdjusted1 * image1AspectRatio_GreaterOne : imageWidthAdjusted1 / image1AspectRatio_GreaterOne ;
-if ( imageHeightAdjusted1 > imageDivHeight ) {
+float EvilSkullWidthAdjusted1 = EvilSkullWidth;
+float EvilSkullHeightAdjusted1 = ( imageWidth1 >= EvilSkullWidth ) ? EvilSkullWidthAdjusted1 * image1AspectRatio_GreaterOne : EvilSkullWidthAdjusted1 / image1AspectRatio_GreaterOne ;
+if ( EvilSkullHeightAdjusted1 > EvilSkullHeight ) {
   println("Image doesn't fit, program ended ... Fatal Flaw, must be solved ... Image"); 
   //exit();
   int indexWhile = 0; //Local Variable to IF-Statement
   //xx WHILE Loops can run infinitely with an eror if not controlled
-  while ( imageHeightAdjusted1>imageDivHeight ) {
+  while ( EvilSkullHeightAdjusted1>EvilSkullHeight ) {
   println("Iteration of Percent WHILE Loop", indexWhile++); //prints value, then adds one, order is important in AP
   if ( indexWhile < 10000 ) {
     //Checking Image Size
@@ -58,21 +58,21 @@ if ( imageHeightAdjusted1 > imageDivHeight ) {
     //EROR: Infinite Loop
     println("ERROR: infinite loop, Image Percent WHILE, value:", indexWhile);
     //exit(); //doesn't work, must force WHILE Stop
-    imageHeightAdjusted1=imageDivHeight; //makes WHILE False, stops WHILE
+    EvilSkullHeightAdjusted1=EvilSkullHeight; //makes WHILE False, stops WHILE
   } //End Check Infinite loop
   //ImageWidthAdjusted Percent v Pixel
-  imageWidthAdjusted1 *= 0.87; // -= 1;
-  imageHeightAdjusted1 = imageWidthAdjusted1/image1AspectRatio_GreaterOne;
-  println("Inspection of percent decrease:", imageWidthAdjusted1, imageHeightAdjusted1, imageDivHeight);
+  EvilSkullWidthAdjusted1 *= 0.87; // -= 1;
+  EvilSkullHeightAdjusted1 = EvilSkullWidthAdjusted1/image1AspectRatio_GreaterOne;
+  println("Inspection of percent decrease:", EvilSkullWidthAdjusted1, EvilSkullHeightAdjusted1, EvilSkullHeight);
   } //END WHILE
   //
 } // END IF
 //
 //DIV
-rect( imageDivX, imageDivY, imageDivWidth, imageDivHeight );
+rect( EvilSkullX, EvilSkullY, EvilSkullWidth, EvilSkullHeight );
 //
-//image( image1, imageDivX, imageDivY, imageDivWidth, imageDivHeight );
-image( image1, imageDivX, imageDivY, imageWidthAdjusted1, imageHeightAdjusted1 );
+//image( image1, EvilSkullX, EvilSkullY, EvilSkullWidth, EvilSkullHeight );
+image( image1, EvilSkullX, EvilSkullY, EvilSkullWidthAdjusted1, EvilSkullHeightAdjusted1 );
 //
 
 
@@ -80,11 +80,11 @@ image( image1, imageDivX, imageDivY, imageWidthAdjusted1, imageHeightAdjusted1 )
 
 /*
 imageWidth1
-imageDivWidth
+EvilSkullWidth
 imageHeight1
-imageDivHeight
-imageDivWidth, imageDivHeight
-imageWidthAdjusted1, imageHeightAdjusted1
+EvilSkullHeight
+EvilSkullWidth, EvilSkullHeight
+EvilSkullWidthAdjusted1, EvilSkullHeightAdjusted1
 */
 //if () {} else {} //End IF Apsect Ratio
 
