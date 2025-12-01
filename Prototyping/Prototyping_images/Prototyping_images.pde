@@ -4,10 +4,10 @@
 */
 //
 //Display
-//fullScreen(); //Landscape
-size(500, 250); //Portrait 750
-int appWidth = width; //displayWidth
-int appHeight = height; //displayHeight
+fullScreen(); //Landscape
+//size(500, 250); //Portrait 750
+int appWidth = displayWidth; //displayWidth width
+int appHeight = displayHeight; //displayHeight height
 //println("Display VARS", "appWidth:"+appWidth, "appHeight:"+appHeight,
 //println("\n\t\t\t\t\tFullScreendisplayWidth:"+displayWidth, "displayHeight:"+displayHeight, "width:"+width, "Height:"+height);
 //
