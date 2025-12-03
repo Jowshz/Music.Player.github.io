@@ -246,6 +246,12 @@ float soundln4Y1 = soundY + soundHeight * 4/8;
 float soundln4X2 = soundX + soundWidth * 5/8; 
 float soundln4Y2 = soundY + soundHeight * 5/8;
 
+float soundbarX = appWidth * ;
+float soundbarY =  appHeight * ;
+float soundbarWidth = appWidth * ;
+float soundbarHeight = appHeight * ;
+
+
 //
 //DIVs: for human confirmation of formulaic and variable accuracy
 rect(play1X, play2Y, play1Width, play2Height);
@@ -268,6 +274,7 @@ rect(searchX, searchY, searchWidth, searchHeight);
 line(music1X1, music1Y1, music2X2, music2Y2);
 line(menu1X1, menu1Y1, menu2X2, menu2Y2);
 line(bar1X1, bar1Y1, bar2X2, bar2Y2);
+rect(soundbarX, soundbarY, soundbarWidth, soundbarHeight);
 //
 //Library of Symbols, requires DIVs
 //rect(stopX, stopY, stopWidth, stopHeight);
