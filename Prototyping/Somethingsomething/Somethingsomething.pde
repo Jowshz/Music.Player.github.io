@@ -28,10 +28,24 @@ String title = "Hello this is the best music player EVER!!";
   String[] fontList = PFont.list(); //List all fonts available
   printArray(fontList); //List all fonts to choose
 */
-float fontSize = 50.0; //Entrie Program
+float fontSize = appHeight; //Entrie Program
 PFont titleFont; //Font var name
 String Calibri = "Calibri";
 titleFont = createFont (Calibri, fontSize);
+//
+println(fontSize, Calibri, titleFont);
+float fontSizeCalibri = 64.0;
+//Hardcoded 
+println("Font Size", fontSize );
+/* Aspect Ratio Maipulations (changes to variables)
+  - choose Aspect Ratio that must be multiplied: fontSize/titleHeight
+  - Rewriting fontSize with formulas
+ */
+float CalibriAspectRatio = fontSizeCalibri / lineDivHeight;
+fontSize = lineDivHeight*CalibriAspectRatio;
+println("Calibri Aspect Ratio:", CalibriAspectRatio);
+println(); //Skip a line
+//
 //Tools / Create Font / Find Font / Do Not Press "OK", known conflict between loadFont() and createFont()
 //Note: Div to "see" vaiables
 rect ( lineDivX, lineDivY, lineDivWidth, lineDivHeight );
