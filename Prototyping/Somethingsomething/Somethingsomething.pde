@@ -55,7 +55,7 @@ color whiteInk = #FFFFFF; //Grey Scale is 255
 color resetInk = whiteInk;
 fill(blueInk); //Ink below rect Grey scale 0-255
 //
-textAlign (CENTER, BOTTOM); //Align X&Y, see Processing.org / reference
+textAlign (CENTER, CENTER); //Align X&Y, see Processing.org / reference
 //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
 textFont(titleFont, fontSize);
 text( title, lineDivX, lineDivY, lineDivWidth, lineDivHeight );
