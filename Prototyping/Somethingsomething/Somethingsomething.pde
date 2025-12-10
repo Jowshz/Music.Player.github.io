@@ -57,7 +57,19 @@ fill(blueInk); //Ink below rect Grey scale 0-255
 //
 textAlign (CENTER, CENTER); //Align X&Y, see Processing.org / reference
 //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
+//
+//Drawing Text
+//ERROR Check fontSize, deceasing the text when wrapped or not shown
 textFont(titleFont, fontSize);
+float constantDecrease = 0.99;
+while ( textWidth( title ) > lineDivWidth ) {
+  //ERROR: infinite loop, requires exit() and print()
+  fontSize *= constantDecrease;
+  textFont(titleFont, fontSize);
+}
+//WHILE Error Check
+//textFont() has option to combine font declaration with textSize()
+//textFont()( is better for more than one PFont Variable
 text( title, lineDivX, lineDivY, lineDivWidth, lineDivHeight );
 fill(resetInk);
 //
