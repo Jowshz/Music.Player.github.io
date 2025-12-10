@@ -10,10 +10,21 @@ int appHeight = displayHeight; //displayHeight height
 //println("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tFullScreendisplayWidth:"+displayWidth, "displayHeight:"+displayHeight, "width:"+width, "Height:"+height);
 //
 //Population
-float lineDivX =  appWidth * 11.4/16;
-float lineDivY = appHeight * 7.3/12;
-float lineDivWidth = appWidth * 4/16;
-float lineDivHeight = appHeight * 3.2/12;
+float[] lineDivWidth = new float[0];
+float lineDivX1 =  appWidth * 11.4/16;
+float lineDivY1 = appHeight * 7.3/12;
+lineDivWidth[0] = appWidth * 4/16;
+float lineDivHeight1 = appHeight * 3.2/12;
+
+float lineDivX2 = lineDivX1;
+float lineDivY2 = appHeight * 9.3/12;
+lineDivWidth[1] = appWidth * 4/16;
+float lineDivHeight2 = lineDivHeight1;
+
+float lineDivX3 = lineDivX1;
+float lineDivY3 = appHeight * 11.3/12;
+lineDivWidth[2] = appWidth * 4/16;
+float lineDivHeight3 = lineDivHeight1;
 //
 //Strings, Text, caled Literal strings
 String title = "Hello this is the best music player EVER!!";
@@ -41,14 +52,16 @@ println("Font Size", fontSize );
   - choose Aspect Ratio that must be multiplied: fontSize/titleHeight
   - Rewriting fontSize with formulas
  */
-float CalibriAspectRatio = fontSizeCalibri / lineDivHeight;
-fontSize = lineDivHeight*CalibriAspectRatio;
+float CalibriAspectRatio = fontSizeCalibri / lineDivHeight1;
+fontSize = lineDivHeight1*CalibriAspectRatio;
 println("Calibri Aspect Ratio:", CalibriAspectRatio);
 println(); //Skip a line
 //
 //Tools / Create Font / Find Font / Do Not Press "OK", known conflict between loadFont() and createFont()
 //Note: Div to "see" vaiables
-rect ( lineDivX, lineDivY, lineDivWidth, lineDivHeight );
+rect ( lineDivX1, lineDivY1, lineDivWidth1, lineDivHeight1 );
+rect ( lineDivX2, lineDivY2, lineDivWidth2, lineDivHeight2 );
+rect ( lineDivX3, lineDivY3, lineDivWidth3, lineDivHeight3 );
 //
 color blueInk = #3277D6; //Hexidecimal
 color whiteInk = #FFFFFF; //Grey Scale is 255
@@ -61,16 +74,24 @@ textAlign (CENTER, CENTER); //Align X&Y, see Processing.org / reference
 //Drawing Text
 //ERROR Check fontSize, deceasing the text when wrapped or not shown
 textFont(titleFont, fontSize);
-/*float constantDecrease = 0.99;
-while ( textWidth( title ) > lineDivWidth ) {
+float constantDecrease = 0.99;
+//FOR Loop Error, Copy * Paste
+for( int i=0; i<2; i++ ) {
+while ( textWidth( title ) > lineDivWidth[i] ) {
   //ERROR: infinite loop, requires exit() and print()
   fontSize *= constantDecrease;
   textFont(titleFont, fontSize);
-}*/
+  }
+} //End FOR Loop, Font Size Check in DIVs
+
+
+
 //WHILE Error Check
 //textFont() has option to combine font declaration with textSize()
 //textFont()( is better for more than one PFont Variable
-text( title, lineDivX, lineDivY, lineDivWidth, lineDivHeight );
+for ( int i=o; i<3; i++) {
+text( title, lineDivX[i], lineDivY[i], lineDivWidth[i], lineDivHeight[i] );
+}
 fill(resetInk);
 //
 //END program
