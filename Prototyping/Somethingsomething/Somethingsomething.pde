@@ -35,6 +35,7 @@ lineDivHeight[2] = lineDivHeight[0];
 String[] text = new String[numberOfDIVs]; //CAUTION: Data intentionally makes STRINGS=numberOfDIVs, one-to-one counting
 text[0] = "Hello this is the best music player EVER!!";
 text[1] = "Search";
+text[2] = "hihihiihih";
 
 
 /*Fonts from OS
