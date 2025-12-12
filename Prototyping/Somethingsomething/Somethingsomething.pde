@@ -10,29 +10,32 @@ int appHeight = displayHeight; //displayHeight height
 //println("\n\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\tFullScreendisplayWidth:"+displayWidth, "displayHeight:"+displayHeight, "width:"+width, "Height:"+height);
 //
 //Population
-float[] lineDivWidth = new float[0];
-float lineDivX1 =  appWidth * 11.4/16;
-float lineDivY1 = appHeight * 7.3/12;
+int numberOfDIVs = 3;
+float[] lineDivX = new float[numberOfDIVs];
+float[] lineDivY = new float[numberOfDIVs];
+float[] lineDivWidth = new float[numberOfDIVs];
+float[] lineDivHeight = new float[numberOfDIVs];
+
+lineDivX[0] =  appWidth * 11.4/16;
+lineDivY[0] = appHeight * 7.3/12;
 lineDivWidth[0] = appWidth * 4/16;
-float lineDivHeight1 = appHeight * 3.2/12;
+lineDivHeight[0] = appHeight * 3.2/12;
 
-float lineDivX2 = lineDivX1;
-float lineDivY2 = appHeight * 9.3/12;
-lineDivWidth[1] = appWidth * 4/16;
-float lineDivHeight2 = lineDivHeight1;
+lineDivX[1] = appWidth * 6.1/16;
+lineDivY[1] = appHeight * 0.3/12;
+lineDivWidth[1] = appWidth * 6/16;
+lineDivHeight[1] = appWidth * 0.9/12;
 
-float lineDivX3 = lineDivX1;
-float lineDivY3 = appHeight * 11.3/12;
+lineDivX[2] = lineDivX[0];
+lineDivY[2] = appHeight * 11.3/12;
 lineDivWidth[2] = appWidth * 4/16;
-float lineDivHeight3 = lineDivHeight1;
+lineDivHeight[2] = lineDivHeight[0];
 //
 //Strings, Text, caled Literal strings
-String title = "Hello this is the best music player EVER!!";
-/* Full String longer than Rectanlge, "Hi! I changed 2D Size."
-  - When a String just fits the height aspect ratio is the largest, sometimes >1
-  - Fonts differs in WHITE SPACE around the foreground "coloured ink"
-*/
-// Students enter all text from Case Study
+String[] text = new String[numberOfDIVs]; //CAUTION: Data intentionally makes STRINGS=numberOfDIVs, one-to-one counting
+text[0] = "Hello this is the best music player EVER!!";
+text[1] = "Search";
+
 
 /*Fonts from OS
   println("Start of Console"); //ERROR
@@ -43,54 +46,45 @@ float fontSize = appHeight; //Entrie Program
 PFont titleFont; //Font var name
 String Calibri = "Calibri";
 titleFont = createFont (Calibri, fontSize);
-//
-println(fontSize, Calibri, titleFont);
 float fontSizeCalibri = 64.0;
-//Hardcoded 
-println("Font Size", fontSize );
-/* Aspect Ratio Maipulations (changes to variables)
-  - choose Aspect Ratio that must be multiplied: fontSize/titleHeight
-  - Rewriting fontSize with formulas
- */
-float CalibriAspectRatio = fontSizeCalibri / lineDivHeight1;
-fontSize = lineDivHeight1*CalibriAspectRatio;
-println("Calibri Aspect Ratio:", CalibriAspectRatio);
-println(); //Skip a line
+float divHeightCalibi = lineDivHeight[0];
+float CalibriAspectRatio = fontSizeCalibri / divHeightCalibi;
+fontSize = lineDivHeight[0]*CalibriAspectRatio;
 //
-//Tools / Create Font / Find Font / Do Not Press "OK", known conflict between loadFont() and createFont()
-//Note: Div to "see" vaiables
-rect ( lineDivX1, lineDivY1, lineDivWidth1, lineDivHeight1 );
-rect ( lineDivX2, lineDivY2, lineDivWidth2, lineDivHeight2 );
-rect ( lineDivX3, lineDivY3, lineDivWidth3, lineDivHeight3 );
+for ( int i=0; i<numberOfDIVs; i++ ) {
+  rect( lineDivX[i], lineDivY[i], lineDivWidth[i], lineDivHeight[i] );
+} //End FOR DIVs
 //
+//Drawing Text
 color blueInk = #3277D6; //Hexidecimal
 color whiteInk = #FFFFFF; //Grey Scale is 255
 color resetInk = whiteInk;
 fill(blueInk); //Ink below rect Grey scale 0-255
-//
+//Grey Scale 0-255
 textAlign (CENTER, CENTER); //Align X&Y, see Processing.org / reference
 //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
 //
 //Drawing Text
 //ERROR Check fontSize, deceasing the text when wrapped or not shown
-textFont(titleFont, fontSize);
-float constantDecrease = 0.99;
-//FOR Loop Error, Copy * Paste
-for( int i=0; i<2; i++ ) {
-while ( textWidth( title ) > lineDivWidth[i] ) {
-  //ERROR: infinite loop, requires exit() and print()
-  fontSize *= constantDecrease;
-  textFont(titleFont, fontSize);
-  }
+textFont(titleFont, fontSize); 
+float constantDecrease = 0.99;  
+int iWhile=0; 
+for ( int i=0; i<3; i++ ) {
+  while ( textWidth( text[i] ) > lineDivWidth[i] ) {
+    iWhile++;
+    //ERROR: infinite loop, requires exit() & println()
+    fontSize *= constantDecrease; 
+    textFont(titleFont, fontSize); 
+  } //End WHILE Error Check Text-wrap
+   println("Iterations of WHILE:", iWhile, "\tPixel difference of divWidth & textWidth:", lineDivWidth[i]-textWidth( text[i] ), "\tUsing", constantDecrease*100+"%" ); //Plus sign is concatenation for % symbol, exemplar
 } //End FOR Loop, Font Size Check in DIVs
-
-
+//
 
 //WHILE Error Check
 //textFont() has option to combine font declaration with textSize()
 //textFont()( is better for more than one PFont Variable
-for ( int i=o; i<3; i++) {
-text( title, lineDivX[i], lineDivY[i], lineDivWidth[i], lineDivHeight[i] );
+for ( int i=0; i<3; i++) {
+  text( text[i], lineDivX[i], lineDivY[i], lineDivWidth[i], lineDivHeight[i] );
 }
 fill(resetInk);
 //
