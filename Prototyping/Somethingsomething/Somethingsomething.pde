@@ -62,8 +62,6 @@ color whiteInk = #FFFFFF; //Grey Scale is 255
 color resetInk = whiteInk;
 fill(blueInk); //Ink below rect Grey scale 0-255
 //Grey Scale 0-255
-textAlign (CENTER, CENTER); //Align X&Y, see Processing.org / reference
-//Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
 //
 //Drawing Text
 //ERROR Check fontSize, deceasing the text when wrapped or not shown
@@ -84,8 +82,18 @@ for ( int i=0; i<3; i++ ) {
 //WHILE Error Check
 //textFont() has option to combine font declaration with textSize()
 //textFont()( is better for more than one PFont Variable
+float padding = 10; //space for search between line n text
+
 for ( int i=0; i<3; i++) {
-  text( text[i], lineDivX[i], lineDivY[i], lineDivWidth[i], lineDivHeight[i] );
+  if(i == 1){
+  textAlign (LEFT, CENTER); //Align X&Y, see Processing.org / reference
+  text(text[i], lineDivX[i] + padding, lineDivY[i], lineDivWidth[i], lineDivHeight[i]); //+pad for x to create space
+  } else {
+  //all other texts
+  textAlign(CENTER, CENTER);
+   text(text[i], lineDivX[i], lineDivY[i], lineDivWidth[i], lineDivHeight[i]);
+  }
+//Values for text: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
 }
 fill(resetInk);
 //
