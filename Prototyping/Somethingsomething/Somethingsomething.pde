@@ -26,16 +26,16 @@ lineDivY[1] = appHeight * 0.3/12;
 lineDivWidth[1] = appWidth * 6/16;
 lineDivHeight[1] = appWidth * 0.9/12;
 
-lineDivX[2] = lineDivX[0];
-lineDivY[2] = appHeight * 11.3/12;
-lineDivWidth[2] = appWidth * 4/16;
-lineDivHeight[2] = lineDivHeight[0];
+lineDivX[2] = appWidth * 0.8/16;
+lineDivY[2] = appHeight * 1.8/12;
+lineDivWidth[2] = appWidth * 1.1/16;
+lineDivHeight[2] = appHeight * 0.6/12;
 //
 //Strings, Text, caled Literal strings
 String[] text = new String[numberOfDIVs]; //CAUTION: Data intentionally makes STRINGS=numberOfDIVs, one-to-one counting
 text[0] = "Hello this is the best music player EVER!!";
 text[1] = "Search";
-text[2] = "hihihiihih";
+text[2] = "Home";
 
 
 /*Fonts from OS
@@ -45,12 +45,12 @@ text[2] = "hihihiihih";
 */
 float fontSize = appHeight; //Entrie Program
 PFont titleFont; //Font var name
-String Calibri = "Calibri";
-titleFont = createFont (Calibri, fontSize);
-float fontSizeCalibri = 64.0;
-float divHeightCalibi = lineDivHeight[0];
-float CalibriAspectRatio = fontSizeCalibri / divHeightCalibi;
-fontSize = lineDivHeight[0]*CalibriAspectRatio;
+String Georgia = "Georgia";
+titleFont = createFont (Georgia, fontSize);
+float fontSizeGeorgia = 64.0;
+float divHeightGeorgia = lineDivHeight[0];
+float GeorgiaAspectRatio = fontSizeGeorgia / divHeightGeorgia;
+fontSize = lineDivHeight[0]*GeorgiaAspectRatio;
 //
 for ( int i=0; i<numberOfDIVs; i++ ) {
   rect( lineDivX[i], lineDivY[i], lineDivWidth[i], lineDivHeight[i] );
