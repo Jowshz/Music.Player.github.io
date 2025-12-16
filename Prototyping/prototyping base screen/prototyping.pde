@@ -117,7 +117,7 @@ float searchY = appHeight * 0.3/12;
 float searchWidth = appWidth * 4/16;
 float searchHeight = appHeight * 0.9/12;
 
-float music1X1 = appWidth * 2/16;
+float music1X1 = appWidth * 2/16; //These are lines
 float music1Y1 = appHeight * 10.5/12;
 float music2X2 = appWidth * 16/16;
 float music2Y2 = appHeight * 10.5/12;
@@ -132,7 +132,7 @@ float bar1Y1 = appHeight * 1.5/12;
 float bar2X2 = appWidth * 16/16;
 float bar2Y2 = appHeight * 1.5/12;
 
-float forTriX1 = forX + forWidth * 1/4;
+float forTriX1 = forX + forWidth * 1/4; //X nad Y for 1 point of triangle
 float forTriY1 = forY + forHeight * 1/4;
 float forTriX2 = forX + forWidth * 1/2;
 float forTriY2 = forY + forHeight * 1/2;
@@ -156,15 +156,16 @@ float backRectY = backY + backHeight * 1/2;
 float backRectWidth = backWidth * 1/8;
 float backRectHeight = backHeight * 1/2;
 
-float centerXFrac = 1/4f;
-float centerYFrac = 1/4f;
-float diameterFrac = 1/16f;  
+float centerXFrac = 1/4f; // all dots are 1/4 in the box
+float centerYFrac = 1/4f; //put f to show as decimal
+float diameterFrac = 1/16f; // how big the dots are
 
+//No centerYFrac since its the original one 1/4f;
 float dotX = queueX + queueWidth * centerXFrac;
 float dotY = queueY + queueHeight * centerYFrac;
 float dotD = queueWidth * diameterFrac;
 
-centerYFrac = 2/4f;
+centerYFrac = 2/4f; // this dots Y is 2/4
 float dot2X = queueX + queueWidth * centerXFrac;
 float dot2Y = queueY + queueHeight * centerYFrac;
 float dot2D = queueWidth * diameterFrac;
@@ -190,15 +191,15 @@ float queline3X2 = queueX + queueWidth * 3/4;
 float queline3Y2 = queueY + queueHeight * 3/4;
 
 
-float lyrectX = lyrX + lyrWidth * 1/4f;
-float lyrectY = lyrY + lyrHeight * 1/8f;
-float lyrectWidth = lyrWidth * 1/2f;   
-float lyrectHeight = lyrHeight * 6/8f; 
+float lyrectX = lyrX + lyrWidth * 1/4;
+float lyrectY = lyrY + lyrHeight * 1/8;
+float lyrectWidth = lyrWidth * 1/2;   
+float lyrectHeight = lyrHeight * 6/8; 
 
-float lyrline1X1 = lyrectX + lyrectWidth * 1/4;
-float lyrline1Y1 = lyrectY + lyrectHeight * 1/4;
-float lyrline1X2 = lyrectX + lyrectWidth * 3/4;
-float lyrline1Y2 = lyrectY + lyrectHeight * 1/4;
+float lyrline1X1 = lyrectX + lyrectWidth * 1/4; //point 1 LINE
+float lyrline1Y1 = lyrectY + lyrectHeight * 1/4; //point 1
+float lyrline1X2 = lyrectX + lyrectWidth * 3/4; //point 2
+float lyrline1Y2 = lyrectY + lyrectHeight * 1/4; //point 2
 
 float lyrline2X1 = lyrectX + lyrectWidth * 1/4;
 float lyrline2Y1 = lyrectY + lyrectHeight * 1/2;
@@ -211,20 +212,20 @@ float lyrline3Y1 = lyrectY + lyrectHeight * 3/4;
 float lyrline3X2 = lyrectX + lyrectWidth * 3/4;
 float lyrline3Y2 = lyrectY + lyrectHeight * 3/4;
 
-float soundbutX = soundX + soundWidth * 1/4f; 
-float soundbutY = soundY + soundHeight * 7/16f; 
+float soundbutX = soundX + soundWidth * 1/4; 
+float soundbutY = soundY + soundHeight * 7/16; 
 
-float soundbut2X = soundX + soundWidth * 3/8f; 
-float soundbut2Y = soundY + soundHeight * 5/16f; 
+float soundbut2X = soundX + soundWidth * 3/8; 
+float soundbut2Y = soundY + soundHeight * 5/16; 
 
-float soundbut3X = soundX + soundWidth * 1/2f; 
-float soundbut3Y = soundY + soundHeight * 1/2f; 
+float soundbut3X = soundX + soundWidth * 1/2; 
+float soundbut3Y = soundY + soundHeight * 1/2; 
 
-float soundbut4X = soundX + soundWidth * 3/8f; 
-float soundbut4Y = soundY + soundHeight * 11/16f; 
+float soundbut4X = soundX + soundWidth * 3/8; 
+float soundbut4Y = soundY + soundHeight * 11/16; 
 
-float soundbut5X = soundX + soundWidth * 1/4f; 
-float soundbut5Y = soundY + soundHeight * 9/16f;
+float soundbut5X = soundX + soundWidth * 1/4; 
+float soundbut5Y = soundY + soundHeight * 9/16;
 
 float soundln1X1 = soundX + soundWidth * 4/8; 
 float soundln1Y1 = soundY + soundHeight * 3/8; 
@@ -246,10 +247,11 @@ float soundln4Y1 = soundY + soundHeight * 4/8;
 float soundln4X2 = soundX + soundWidth * 5/8; 
 float soundln4Y2 = soundY + soundHeight * 5/8;
 
-float soundbarX = appWidth * ;
-float soundbarY =  appHeight * ;
-float soundbarWidth = appWidth * ;
-float soundbarHeight = appHeight * ;
+float soundbarX = appWidth * 14.2/16;
+float soundbarY =  appHeight * 11.15/12; /*
+1.3/2 = 0.65, 0.65 + 10.6 (to make it middle) + 0.1 (add 0.1 since height is 0.2) */
+float soundbarWidth = appWidth * 1.7/16;
+float soundbarHeight = appHeight * 0.2/12;
 
 
 //
@@ -287,7 +289,7 @@ rectMode(CENTER);
 rect(forRectX, forRectY, forRectWidth, forRectHeight);
 rect(backRectX, backRectY, backRectWidth, backRectHeight);
 rectMode(CORNER);
-ellipse(dotX, dotY, dotD, dotD);
+ellipse(dotX, dotY, dotD, dotD); //Eclipse is dot and dotD is diamater of the dot
 ellipse(dot2X, dot2Y, dot2D, dot2D);
 ellipse(dot3X, dot3Y, dot3D, dot3D);
 line(quelineX1, quelineY1, quelineX2, quelineY2);
@@ -297,13 +299,13 @@ rect(lyrectX, lyrectY, lyrectWidth, lyrectHeight);
 line(lyrline1X1, lyrline1Y1, lyrline1X2, lyrline1Y2);
 line(lyrline2X1, lyrline2Y1, lyrline2X2, lyrline2Y2);
 line(lyrline3X1, lyrline3Y1, lyrline3X2, lyrline3Y2);
-beginShape(); 
-vertex(soundbutX, soundbutY); 
+beginShape(); //5 points on a unusual shape 
+vertex(soundbutX, soundbutY); //vertex's in order or the lines will connect weirdly
 vertex(soundbut2X, soundbut2Y); 
 vertex(soundbut3X, soundbut3Y); 
 vertex(soundbut4X, soundbut4Y);
 vertex(soundbut5X, soundbut5Y); 
-endShape(CLOSE); 
+endShape(CLOSE); //conect last too
 line(soundln1X1, soundln1Y1, soundln1X2, soundln1Y2); 
 line(soundln2X1, soundln2Y1, soundln2X2, soundln2Y2); 
 line(soundln3X1, soundln3Y1, soundln3X2, soundln3Y2);
