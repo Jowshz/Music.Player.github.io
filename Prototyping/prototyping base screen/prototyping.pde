@@ -139,9 +139,9 @@ float forTriY2 = forY + forHeight * 1/2;
 float forTriX3 = forX + forWidth * 1/4;
 float forTriY3 = forY + forHeight * 3/4;
 
-float forRectX = forX + forWidth * 9/16;   
-float forRectY = forY + forHeight * 1/2;   
-float forRectWidth = forWidth * 1/8;       
+float forRectX = forX + forWidth * 1/2;   
+float forRectY = forY + forHeight * 1/4;   
+float forRectWidth = forWidth * 1/8;// Width = right X − left X Height = bottom Y − top Y  
 float forRectHeight = forHeight * 1/2;     
 
 float backTriX1 = backX + backWidth * 3/4;
@@ -151,9 +151,9 @@ float backTriY2 = backY + backHeight * 1/2;
 float backTriX3 = backX + backWidth * 3/4;
 float backTriY3 = backY + backHeight * 3/4;
 
-float backRectX = backX + backWidth * 7/16;
-float backRectY = backY + backHeight * 1/2;
-float backRectWidth = backWidth * 1/8;
+float backRectX = backX + backWidth * 3/8;
+float backRectY = backY + backHeight * 1/4;
+float backRectWidth = backWidth * 1/8; // Width = right X − left X Height = bottom Y − top Y
 float backRectHeight = backHeight * 1/2;
 
 float centerXFrac = 1/4f; // all dots are 1/4 in the box
@@ -191,7 +191,7 @@ float queline3X2 = queueX + queueWidth * 3/4;
 float queline3Y2 = queueY + queueHeight * 3/4;
 
 
-float lyrectX = lyrX + lyrWidth * 1/4;
+float lyrectX = lyrX + lyrWidth * 1/4; // square
 float lyrectY = lyrY + lyrHeight * 1/8;
 float lyrectWidth = lyrWidth * 1/2;   
 float lyrectHeight = lyrHeight * 6/8; 
@@ -285,10 +285,8 @@ triangle(forTriX1, forTriY1, forTriX2, forTriY2, forTriX3, forTriY3);
 triangle(backTriX1, backTriY1, backTriX2, backTriY2, backTriX3, backTriY3);
 line(mute1X1, mute1Y1, mute2X2, mute2Y2);
 line(mute3X1, mute3Y1, mute4X2, mute4Y2);
-rectMode(CENTER);
 rect(forRectX, forRectY, forRectWidth, forRectHeight);
 rect(backRectX, backRectY, backRectWidth, backRectHeight);
-rectMode(CORNER);
 ellipse(dotX, dotY, dotD, dotD); //Eclipse is dot and dotD is diamater of the dot
 ellipse(dot2X, dot2Y, dot2D, dot2D);
 ellipse(dot3X, dot3Y, dot3D, dot3D);
