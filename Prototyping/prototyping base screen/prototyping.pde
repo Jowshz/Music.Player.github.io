@@ -253,6 +253,16 @@ float soundbarY =  appHeight * 11.15/12; /*
 float soundbarWidth = appWidth * 1.7/16;
 float soundbarHeight = appHeight * 0.2/12;
 
+float pause1X = play1X + play1Width * 1/4;
+float pause1Y =  play2Y + play2Height * 1/4;
+float pause1Width = backRectWidth; //less work for me :P
+float pause1Height = backRectHeight;
+
+float pause2X = play1X + play1Width * 5/8;
+float pause2Y = play2Y + play2Height * 1/4; 
+float pause2Width = forRectWidth;
+float pause2Height = forRectHeight;
+
 
 //
 //DIVs: for human confirmation of formulaic and variable accuracy
@@ -277,6 +287,10 @@ line(music1X1, music1Y1, music2X2, music2Y2);
 line(menu1X1, menu1Y1, menu2X2, menu2Y2);
 line(bar1X1, bar1Y1, bar2X2, bar2Y2);
 rect(soundbarX, soundbarY, soundbarWidth, soundbarHeight);
+rect(forRectX, forRectY, forRectWidth, forRectHeight);
+rect(backRectX, backRectY, backRectWidth, backRectHeight);
+rect(pause1X, pause1Y, pause1Width, pause1Height);
+rect(pause2X, pause2Y, pause2Width, pause2Height);
 //
 //Library of Symbols, requires DIVs
 //rect(stopX, stopY, stopWidth, stopHeight);
@@ -285,8 +299,6 @@ triangle(forTriX1, forTriY1, forTriX2, forTriY2, forTriX3, forTriY3);
 triangle(backTriX1, backTriY1, backTriX2, backTriY2, backTriX3, backTriY3);
 line(mute1X1, mute1Y1, mute2X2, mute2Y2);
 line(mute3X1, mute3Y1, mute4X2, mute4Y2);
-rect(forRectX, forRectY, forRectWidth, forRectHeight);
-rect(backRectX, backRectY, backRectWidth, backRectHeight);
 ellipse(dotX, dotY, dotD, dotD); //Eclipse is dot and dotD is diamater of the dot
 ellipse(dot2X, dot2Y, dot2D, dot2D);
 ellipse(dot3X, dot3Y, dot3D, dot3D);
@@ -308,3 +320,6 @@ line(soundln1X1, soundln1Y1, soundln1X2, soundln1Y2);
 line(soundln2X1, soundln2Y1, soundln2X2, soundln2Y2); 
 line(soundln3X1, soundln3Y1, soundln3X2, soundln3Y2);
 line(soundln4X1, soundln4Y1, soundln4X2, soundln4Y2);
+line(music1X1, music1Y1, music2X2, music2Y2);
+line(menu1X1, menu1Y1, menu2X2, menu2Y2);
+line(bar1X1, bar1Y1, bar2X2, bar2Y2);
