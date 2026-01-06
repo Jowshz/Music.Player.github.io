@@ -18,3 +18,7 @@ import ddf.minim.signals.*;
 import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 //
+//Global Variables
+Minim minim; //initiates entire class
+int numberOfSong = 3; //Best Practice
+int numberOfSoundEffects = 1; //Best Practice
