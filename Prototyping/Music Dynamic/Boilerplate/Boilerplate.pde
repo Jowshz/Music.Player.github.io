@@ -26,17 +26,17 @@ void setup() {
   int appHeight = height;
   //
   //Music Loading - STRUCTURED Review
-minim = new Minim(this);
-String upArrow = "../../"; //Developer Specific
-String musicFile = "Music/"; 
-String songName1 = "Local Elevator - Kevin MacLeod";
-String fileExtension_mp3 = ".mp3";
-//
-String musicDirectory = upArrow + musicFile;//Concanetion
-String file = musicDirectory + songName1 + fileExtension_mp3;
-playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+  minim = new Minim(this);
+  String upArrow = "../../"; //Developer Specific
+  String musicFile = "Music/";
+  String songName1 = "Local Elevator - Kevin MacLeod";
+  String fileExtension_mp3 = ".mp3";
+  //
+  String musicDirectory = upArrow + musicFile;//Concanetion
+  String file = musicDirectory + songName1 + fileExtension_mp3;
+  playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
 
-//
+  //
 } //End setup
 //
 void draw() {
