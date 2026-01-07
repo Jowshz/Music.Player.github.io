@@ -19,10 +19,24 @@ AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects ];
 int currentSong = numberOfSongs - numberOfSongs;  //ZERO, Math Property
 //
 void setup() {
+  //Display
   size(700, 500); //width //height
   //fulscreen(); //displayWidth //displayHeight
   int appWidth = width;
   int appHeight = height;
+  //
+  //Music Loading - STRUCTURED Review
+minim = new Minim(this);
+String upArrow = "../../"; //Developer Specific
+String musicFile = "Music/"; 
+String songName1 = "Local Elevator - Kevin MacLeod";
+String fileExtension_mp3 = ".mp3";
+//
+String musicDirectory = upArrow + musicFile;//Concanetion
+String file = musicDirectory + songName1 + fileExtension_mp3;
+playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+
+//
 } //End setup
 //
 void draw() {
