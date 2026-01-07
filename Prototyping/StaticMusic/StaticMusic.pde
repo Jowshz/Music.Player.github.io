@@ -36,7 +36,7 @@ int appHeight = height;
 minim = new Minim(this);
 String upArrow = "../../"; //Developer Specific
 String musicFile = "Music/"; 
-String songName1 = "danielCaesarToronto";
+String songName1 = "Local Elevator - Kevin MacLeod";
 String fileExtension_mp3 = ".mp3";
 //
 String musicDirectory = upArrow + musicFile;//Concanetion
