@@ -36,19 +36,26 @@ int appHeight = height;
 minim = new Minim(this);
 String upArrow = "../../"; //Developer Specific
 String musicFile = "Music/"; 
+String soundEffectsFile = "Music/";
 String songName1 = "Local Elevator - Kevin MacLeod";
+String soundEffect1 = "ROBLOXButtonSE";
 String fileExtension_mp3 = ".mp3";
 //
 String musicDirectory = upArrow + musicFile;//Concanetion
+String soundEffectsDirectory = upArrow + musicFile + soundEffectsFile;
 String file = musicDirectory + songName1 + fileExtension_mp3;
-println("Music PathWay", musicDirectory);
-println("Full Music File Pathway", file);
-
 playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
+file = soundEffectsDirectory + soundEffect1 + fileExtension_mp3;
+soundEffects[currentSong] = minim.loadFile( file );
 //
-if ( playList[currentSong]==null ) { //ERROR, play list is NULL
+if ( playList[currentSong]==null || soundEffects[currentSong]==null) { //ERROR, play list is NULL
   //See FILE or minim.loadFile
   println("Did the music and sound load properly");
   printArray(playList);
+  printArray(soundEffects);
+  /*
+  println("Music PathWay", musicDirectory);
+  println("Full Music File Pathway", file);
+  */
 }
 //Deal With NULL
