@@ -11,6 +11,16 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 //
 //Global Variables
+//
+void settings() {
+  println(displayWidth, displayHeight);
+  int shorterSide = ( displayWidth > displayHeight ) ? displayHeight : displayWidth ;//Ternary Operator
+  shorterSide *= 0.9; //99%
+  size(shorterSide, shorterSide); //width //height
+  println("Display Questions", displayWidth, displayHeight, shorterSide);
+  println("CANVAS Size Key Variables for setup()", width, height);
+}
+//
 Minim minim; //initiates entire class
 int numberOfSongs = 3; //Best Practice
 int numberOfSoundEffects = 1; //Best Practice
@@ -20,8 +30,10 @@ int currentSong = numberOfSongs - numberOfSongs;  //ZERO, Math Property
 //
 void setup() {
   //Display
-  size(700, 500); //width //height
-  //fulscreen(); //displayWidth //displayHeight
+  //println(displayWidth, displayHeight);
+  //int shorterSide = ( displayWidth > displayHeight ) ? displayHeight : displayWidth ; //Ternary Operator
+  //Size(shorterSide, shorterSide); //width //height
+  //fullScreen(); //displayWidth //displayHeight
   int appWidth = width;
   int appHeight = height;
   //
@@ -53,8 +65,8 @@ void setup() {
   }
   //
   //Testing Sound
-  playList[currentSong].play();
-  //soundEffects[currentSong].play();
+  //playList[currentSong].play();
+  soundEffects[currentSong].play();
   //
 } //End setup
 //
