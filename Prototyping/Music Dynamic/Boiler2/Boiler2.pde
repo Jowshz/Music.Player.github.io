@@ -6,6 +6,7 @@
 //
 //Global Variables
 int timerStart, currentTime;
+//
 void setup() {
   timerStart = currentTime = millis();
   println("Beginning", timerStart);
