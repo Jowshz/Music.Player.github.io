@@ -91,8 +91,14 @@ void draw() {
     triangle(playX1, playY1, playX2, playY2, playX3, playY3);
     fill(resetBackround);
   }//End Play Button Hover Over
-  if ( mouseX>home1X mouseX<home1X+home1Width mouseY>home1Y mouseY<home1Y+home1Height ) {
+  if ( mouseX>home1X && mouseX<home1X+home1Width && mouseY>home1Y &&mouseY<home1Y+home1Height ) {
+    //fill();
+    rect(home1X, home1Y, home1Width, home1Height);
+    //fill();
   } else {
+    //fill();
+    rect(home1X, home1Y, home1Width, home1Height);
+    //fill();
   } //End Quit Button Hover Over
   //
 } //End draw
