@@ -18,8 +18,10 @@ float play1X, play2Y, play1Width, play2Height;
 float home1X, home1Y, home1Width, home1Height;
 float playX1, playY1, playX2, playY2, playX3, playY3;
 //
-Boolean playButton;
+Boolean playButton=false;
 //
+color resetBackround, resetInk;
+color playColourBackground, playColourSymbol, playColourBackgroundActivated, playColourSymbolActivated;
 void setup() {
   //Display
   size(500, 400);
@@ -50,11 +52,22 @@ void setup() {
   triangle(playX1, playY1, playX2, playY2, playX3, playY3); //Group of Variables
   //
   //Colour Population
-  color black = 0; //Grey Scale, much smaller color, 256 bits #3277D6
-  color white = 255; //Grey Scale
+  color black = 0; //Grey Scale, much smaller color, 256 bits
+  color white = 0; //Grey Scale
   //CANVAS: default backround and ink
   resetBackround = white;
   resetInk = black;
+  //Button Colours
+  color blue = #3277D6;
+  color gray = #555555;
+  color darkgray = #000000;
+  color darkblue = #225396;
+  playColourBackground = blue;
+  playColourSymbol = gray;
+  playColourBackgroundActivated = darkblue;
+  playColourSymbolActivated = darkgray;
+
+
   //
 } //End setup
 //
@@ -63,9 +76,21 @@ void draw() {
   if ( mouseX>play1X && mouseX<play1X+play1Width && mouseY>play2Y && mouseY<play2Y+play2Height ) {
     //println("Wahoo! I'm playing you");
     playButton = true;
+    //fill();
+    rect(play1X, play2Y, play1Width, play2Height);
+    //fill();
+    triangle(playX1, playY1, playX2, playY2, playX3, playY3);
+    //fill();
   } else {
     //print(" ");
+    playButton = false;
+    fill();
+    rect(play1X, play2Y, play1Width, play2Height);
+    fill();
+    triangle(playX1, playY1, playX2, playY2, playX3, playY3);
+    fil();
   }
+  //
 } //End draw
 void mousePressed() {
   if ( playButton == true ) {
