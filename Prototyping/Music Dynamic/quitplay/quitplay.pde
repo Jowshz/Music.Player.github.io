@@ -48,6 +48,14 @@ void setup() {
   rect(play1X, play2Y, play1Width, play2Height);
   rect(home1X, home1Y, home1Width, home1Height);
   triangle(playX1, playY1, playX2, playY2, playX3, playY3); //Group of Variables
+  //
+  //Colour Population
+  color black = 0; //Grey Scale, much smaller color, 256 bits #3277D6
+  color white = 255; //Grey Scale
+  //CANVAS: default backround and ink
+  resetBackround = white;
+  resetInk = black;
+  //
 } //End setup
 //
 void draw() {
