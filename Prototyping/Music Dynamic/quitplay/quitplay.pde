@@ -21,7 +21,7 @@ float playX1, playY1, playX2, playY2, playX3, playY3;
 Boolean playButton=false;
 //
 color resetBackround, resetInk;
-color playColourBackground, playColourSymbol, playColourBackgroundActivated, playColourSymbolActivated;
+color playColourBackground, playColourSymbol, playColourBackgroundActivated, playColourSymbolActivated, playColourBackground2;
 void setup() {
   //Display
   size(500, 400);
@@ -58,6 +58,7 @@ void setup() {
   resetBackround = white;
   resetInk = black;
   //Button Colours
+  color red = #A20D10;
   color blue = #3277D6;
   color gray = #555555;
   color darkgray = #000000;
@@ -89,7 +90,10 @@ void draw() {
     fill(playColourSymbol);
     triangle(playX1, playY1, playX2, playY2, playX3, playY3);
     fill(resetBackround);
-  }
+  }//End Play Button Hover Over
+  if ( mouseX>home1X mouseX<home1X+home1Width mouseY>home1Y mouseY<home1Y+home1Height ) {
+  } else {
+  } //End Quit Button Hover Over
   //
 } //End draw
 void mousePressed() {
