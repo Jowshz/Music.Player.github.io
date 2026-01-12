@@ -21,7 +21,8 @@ float playX1, playY1, playX2, playY2, playX3, playY3;
 Boolean playButton=false;
 //
 color resetBackround, resetInk;
-color playColourBackground, playColourSymbol, playColourBackgroundActivated, playColourSymbolActivated, playColourBackground2;
+color playColourBackground, playColourSymbol, playColourBackgroundActivated, playColourSymbolActivated;
+color quitBackground, quitBackgroundActivated;
 void setup() {
   //Display
   size(500, 400);
@@ -67,9 +68,10 @@ void setup() {
   playColourSymbol = gray;
   playColourBackgroundActivated = darkblue;
   playColourSymbolActivated = darkgray;
+  quitBackground = ; 
+  quitBackgroundActivated = ;
 
-
-  //
+    //
 } //End setup
 //
 void draw() {
