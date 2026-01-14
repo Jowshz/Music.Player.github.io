@@ -96,11 +96,11 @@ void draw() {
   if ( mouseX>home1X && mouseX<home1X+home1Width && mouseY>home1Y &&mouseY<home1Y+home1Height ) {
     fill(quitBackgroundActivated);
     rect(home1X, home1Y, home1Width, home1Height);
-    fill(resetBackround);
-  } else {
     fill(quitBackground);
+  } else {
+    fill(quitBackground); 
     rect(home1X, home1Y, home1Width, home1Height);
-    fill(resetBackround);
+    fill(resetBackround); 
   } //End Quit Button Hover Over
   //
 } //End draw
