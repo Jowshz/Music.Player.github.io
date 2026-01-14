@@ -20,7 +20,7 @@ float playX1, playY1, playX2, playY2, playX3, playY3;
 //
 Boolean playButton=false;
 //
-color resetBackround, resetInk;
+color resetBackground, resetInk;
 color playColourBackground, playColourSymbol, playColourBackgroundActivated, playColourSymbolActivated;
 color quitBackground, quitBackgroundActivated;
 void setup() {
@@ -47,6 +47,7 @@ void setup() {
   playY2 = play2Y + play2Height * 1/2;
   playX3 = play1X + play1Width * 1/4;
   playY3 = play2Y + play2Height * 3/4;
+  //
   //DIVs
   rect(play1X, play2Y, play1Width, play2Height);
   rect(home1X, home1Y, home1Width, home1Height);
@@ -54,9 +55,9 @@ void setup() {
   //
   //Colour Population
   color black = 0; //Grey Scale, much smaller color, 256 bits
-  color white = 0; //Grey Scale
-  //CANVAS: default backround and ink
-  resetBackround = white;
+  color white = 255; //Grey Scale
+  //CANVAS: default Background and ink
+  resetBackground = white;
   resetInk = black;
   //Button Colours
   color red = #A20D10;
@@ -68,10 +69,11 @@ void setup() {
   playColourSymbol = gray;
   playColourBackgroundActivated = darkblue;
   playColourSymbolActivated = darkgray;
-  quitBackground = white; 
+  quitBackground = white;
   quitBackgroundActivated = red;
 
-    //
+
+  //
 } //End setup
 //
 void draw() {
@@ -83,7 +85,7 @@ void draw() {
     rect(play1X, play2Y, play1Width, play2Height);
     fill(playColourSymbolActivated);
     triangle(playX1, playY1, playX2, playY2, playX3, playY3);
-    fill(resetBackround);
+    fill(resetBackground);
   } else {
     //print(" ");
     playButton = false;
@@ -91,22 +93,23 @@ void draw() {
     rect(play1X, play2Y, play1Width, play2Height);
     fill(playColourSymbol);
     triangle(playX1, playY1, playX2, playY2, playX3, playY3);
-    fill(resetBackround);
+    fill(resetBackground);
   }//End Play Button Hover Over
   if ( mouseX>home1X && mouseX<home1X+home1Width && mouseY>home1Y &&mouseY<home1Y+home1Height ) {
     fill(quitBackgroundActivated);
     rect(home1X, home1Y, home1Width, home1Height);
-    fill(quitBackground);
+    fill(resetBackground);
   } else {
-    fill(quitBackground); 
+    fill(quitBackground);
     rect(home1X, home1Y, home1Width, home1Height);
-    fill(resetBackround); 
+    fill(resetBackground);
   } //End Quit Button Hover Over
   //
 } //End draw
 void mousePressed() {
   if ( playButton == true ) {
     println("Play My Song");
+    playButton=false;
   } else {
     println(" ");
   }
