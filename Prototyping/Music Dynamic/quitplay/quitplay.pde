@@ -66,36 +66,16 @@ void setup() {
 //
 void draw() {
   //println ("My Mouse is", mouseX, mouseY);
-  if ( mouseX>play1X && mouseX<play1X+play1Width && mouseY>play2Y && mouseY<play2Y+play2Height ) {
-    //println("Wahoo! I'm playing you");
-    playButton = true;
-    fill(playColourBackgroundActivated);
-    rect(play1X, play2Y, play1Width, play2Height);
-    fill(playColourSymbolActivated);
-    triangle(playX1, playY1, playX2, playY2, playX3, playY3);
-    fill(resetBackground);
-  } else {
-    //print(" ");
-    playButton = false;
-    fill(playColourBackground);
-    rect(play1X, play2Y, play1Width, play2Height);
-    fill(playColourSymbol);
-    triangle(playX1, playY1, playX2, playY2, playX3, playY3);
-    fill(resetBackground);
-  }//End Play Button Hover Over
+  //println("Wahoo! I'm playing you");
   if ( mouseX>home1X && mouseX<home1X+home1Width && mouseY>home1Y &&mouseY<home1Y+home1Height ) {
-    fill(quitBackgroundActivated);
-    rect(home1X, home1Y, home1Width, home1Height);
-    fill(resetBackground);
-    fill(quitButtonInk);
-    //text("X", home1X+home1Width*1/2, home1Y+home1Height*3/5);
-    fill(resetInk);
   } else {
-    fill(quitBackground);
-    rect(home1X, home1Y, home1Width, home1Height);
-    fill(resetBackground);
-    //text("X", home1X+home1Width*1/2, home1Y+home1Height*3/5);
-    fill(resetInk);
+    quitButtonRegular();
+  }//End Play Button Hover Over
+  if ( mouseX>play1X && mouseX<play1X+play1Width && mouseY>play2Y && mouseY<play2Y+play2Height ) {
+    if ( playButton == false ) playButtonActive();
+  } else {
+    playButtonReady();
+    if ( playButton == true ) playButtonActive();
   } //End Quit Button Hover Over
   //
 } //End draw
@@ -104,19 +84,35 @@ void mousePressed() {
     quitButton();
   }
   //
-  if ( playButton == true ) {
-    println("Play My Song");
-    playButton=false;
-  } else {
-    println(" ");
+  /* if ( playButton == true ) {
+   println("Play My Song");
+   playButton=false;
+   } else {
+   println(" ");
+   }
+   } //End Mouse Pressed
+   */
+  if ( mouseX>play1X && mouseX<play1X+play1Width && mouseY>play2Y && mouseY<play2Y+play2Height ) {
+    //Note, change to "Is the Song Playing Boolean"
+    if ( playButton == false ) {
+      playButton = true;
+      println("Wahoo! I'm playing you");
+    } else {
+      playButton = false;
+      println(" ");
+    }
   }
-} //End Mouse Pressed
+}
 //
 void keyPressed() {
   if (key=='Q' || key=='q') {
     quitButton();
-  } //End Key Pressed
-}
+  } //Quit Button
+  if (key=='D' || key=='d') {
+    colourPopulation();
+  } //Night Mode
+} //End Key Pressed
+//
 void quitButton() {
   noLoop(); //Adjusts the exit of the program using finishing draw()
   exit(); //With noLoop(), exit happens here

@@ -1,4 +1,4 @@
-void colurPopulation() {
+void colourPopulation() {
   nightModeVariables();
   toomuchColours();
 } //End Colour Population
@@ -14,8 +14,8 @@ void nightModeVariables() {
 void toomuchColours() {
   color black = 0;
   color white = 255;
-  color grayScale = 256/2;
-  color gray = #B9B9B9;
+  //color grayScale = 256/2;
+  //color gray = #B9B9B9;
   //
   resetBackgroundDay = white;
   resetInkDay = black;
