@@ -87,15 +87,30 @@ float numb1Y = appHeight * 11.4/12;
 float numb1Width = appWidth * 0.7/16;
 float numb1Height = appHeight * 0.5/12;
 
-float textX = appWidth * 11.4/16;
+float textX = appWidth * 11.4/16; //NEW
 float textY = appHeight * 7.3/12;
 float textWidth = appWidth * 4/16;
 float textHeight = appHeight * 3.2/12;
 
-float imageX = appWidth * 2.4/16;
+float imageX = appWidth * 2.4/16; //NEW
 float imageY = appHeight * 2/12;
 float imageWidth = appWidth * 13/16;
 float imageHeight = appHeight * 5/12;
+
+float musicbox1X = appWidth * 2.4/16;
+float musicbox1Y = appHeight * 7.3/12;
+float musicbox1Width = appWidth * 2.9/16; //8.7
+float musicbox1Height = appHeight * 2.9/12;
+
+float musicbox2X = appWidth * 7.8/16;
+float musicbox2Y = appHeight * 7.3/12;
+float musicbox2Width = musicbox1Width; //8.7
+float musicbox2Height = musicbox1Height;
+
+float musicbox3X = appWidth * 5.1/16;
+float musicbox3Y = appHeight * 7.3/12;
+float musicbox3Width = musicbox1Width; //8.7
+float musicbox3Height = musicbox1Height;
 
 float home1X = appWidth * 0.1/16;
 float home1Y = appHeight * 1.8/12;
@@ -291,6 +306,12 @@ rect(forRectX, forRectY, forRectWidth, forRectHeight);
 rect(backRectX, backRectY, backRectWidth, backRectHeight);
 rect(pause1X, pause1Y, pause1Width, pause1Height);
 rect(pause2X, pause2Y, pause2Width, pause2Height);
+rect(musicbox1X, musicbox1Y, musicbox1Width, musicbox1Height);
+rect(musicbox2X, musicbox2Y, musicbox2Width, musicbox2Height);
+rect(musicbox3X, musicbox3Y, musicbox3Width, musicbox3Height);
+
+
+
 //
 //Library of Symbols, requires DIVs
 //rect(stopX, stopY, stopWidth, stopHeight);

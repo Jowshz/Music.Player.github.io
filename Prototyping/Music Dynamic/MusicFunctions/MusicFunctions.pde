@@ -43,18 +43,7 @@ void setup() {
 void draw() {
   //println ("My Mouse is", mouseX, mouseY);
   //println("Wahoo! I'm playing you");
-  if ( mouseX>home1X && mouseX<home1X+home1Width && mouseY>home1Y &&mouseY<home1Y+home1Height ) {
-    quitButtonActive();
-  } else {
-    quitButtonRegular();
-  }//End Play Button Hover Over
-  if ( mouseX>play1X && mouseX<play1X+play1Width && mouseY>play2Y && mouseY<play2Y+play2Height ) {
-    if ( playButton == false ) playButtonActive();
-  } else {
-    playButtonReady();
-    if ( playButton == true ) playButtonActive();
-  } //End Quit Button Hover Over
-  //
+  hoverOver_draw();
 } //End draw
 //
 void mousePressed() {

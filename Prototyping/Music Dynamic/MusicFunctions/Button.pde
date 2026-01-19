@@ -2,6 +2,7 @@
  - quitButton
  * DIVs
  - musicButtonShapes, 2-D Music Buttons
+ - Hoverover for buttons, draw()
  */
 //
 void quitButton() {
@@ -50,5 +51,20 @@ void playButtonReady() {
   triangle(playX1, playY1, playX2, playY2, playX3, playY3);
   fill(resetBackground);
 } // End Play Button Ready
+//
+void hoverOver_draw() {
+    if ( mouseX>home1X && mouseX<home1X+home1Width && mouseY>home1Y &&mouseY<home1Y+home1Height ) {
+    quitButtonActive();
+  } else {
+    quitButtonRegular();
+  }//End Play Button Hover Over
+  if ( mouseX>play1X && mouseX<play1X+play1Width && mouseY>play2Y && mouseY<play2Y+play2Height ) {
+    if ( playButton == false ) playButtonActive();
+  } else {
+    playButtonReady();
+    if ( playButton == true ) playButtonActive();
+  } //End Quit Button Hover Over
+  //
+}
 //
 // End Button Subprogram
