@@ -32,38 +32,64 @@ void setup() {
   appWidth = displayWidth; //Best Practice with Key Variables
   appHeight = displayHeight;
   //
-  //DIV Population
-  play1X = appWidth * 8.2/16;
-  play2Y = appHeight * 10.6/12;
-  play1Width = appWidth * 1.3/16;
-  play2Height = appHeight * 1.3/12;
-  home1X = appWidth * 0.1/16;
-  home1Y = appHeight * 1.8/12;
-  home1Width = appWidth * 0.6/16;
-  home1Height = appHeight * 0.6/12;
-  playX1 = play1X + play1Width * 1/4;
-  playY1 = play2Y + play2Height * 1/4;
-  playX2 = play1X + play1Width * 3/4;
-  playY2 = play2Y + play2Height * 1/2;
-  playX3 = play1X + play1Width * 1/4;
-  playY3 = play2Y + play2Height * 3/4;
-  //
-  //DIVs: human verification of variables
-  rect(play1X, play2Y, play1Width, play2Height);
-  rect(home1X, home1Y, home1Width, home1Height);
-  triangle(playX1, playY1, playX2, playY2, playX3, playY3); //Group of Variables
-  //
-  //DIVs
+  divPopulation();
+  DIVs(); //See Buttons
+  musicButtonShapes();
+  nightMode=false;
+  colourPopulation();
   //
 } //End setup
 //
 void draw() {
+  //println ("My Mouse is", mouseX, mouseY);
+  //println("Wahoo! I'm playing you");
+  if ( mouseX>home1X && mouseX<home1X+home1Width && mouseY>home1Y &&mouseY<home1Y+home1Height ) {
+    quitButtonActive();
+  } else {
+    quitButtonRegular();
+  }//End Play Button Hover Over
+  if ( mouseX>play1X && mouseX<play1X+play1Width && mouseY>play2Y && mouseY<play2Y+play2Height ) {
+    if ( playButton == false ) playButtonActive();
+  } else {
+    playButtonReady();
+    if ( playButton == true ) playButtonActive();
+  } //End Quit Button Hover Over
+  //
 } //End draw
 //
 void mousePressed() {
+  if ( mouseX>home1X && mouseX<home1X+home1Width && mouseY>home1Y &&mouseY<home1Y+home1Height ) {
+    quitButton();
+  }
+  //
+  /* if ( playButton == true ) {
+   println("Play My Song");
+   playButton=false;
+   } else {
+   println(" ");
+   }
+   } //End Mouse Pressed
+   */
+  if ( mouseX>play1X && mouseX<play1X+play1Width && mouseY>play2Y && mouseY<play2Y+play2Height ) {
+    //Note, change to "Is the Song Playing Boolean"
+    if ( playButton == false ) {
+      playButton = true;
+      println("Wahoo! I'm playing you");
+    } else {
+      playButton = false;
+      println(" ");
+    }
+  }
 } //End Mouse Pressed
 //
 void keyPressed() {
+  //Note, CAPs Lock on Code: key=='[CAP]' || key=='[lowercase]'
+  if (key=='Q' || key=='q') {
+    quitButton();
+  } //Quit Button
+  if (key=='D' || key=='d') {
+    colourPopulation();
+  } //Night Mode
 } //End Key Pressed
 //
 //End MAIN Program
