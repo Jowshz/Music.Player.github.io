@@ -37,7 +37,7 @@ file = soundEffectsDirectory + soundEffect1 + fileExtension_mp3;
 soundEffects[currentSong] = minim.loadFile( file );
 //
 for ( int i=0; i<numberOfSongs; i++ ) {
-  if ( playList[currentSong]==null || soundEffects[currentSong]==null) { //ERROR, play list is NULL
+  if ( playList[i]==null || soundEffects[currentSong]==null) { //ERROR, play list is NULL
     //See FILE or minim.loadFile
     println("Did the music and sound load properly");
     printArray(playList);
