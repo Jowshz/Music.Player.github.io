@@ -50,6 +50,7 @@ void mousePressed() {
   if ( mouseX>home1X && mouseX<home1X+home1Width && mouseY>home1Y &&mouseY<home1Y+home1Height ) {
     quitButton();
   }
+} //End Mouse Pressed
   //
   /* if ( playButton == true ) {
    println("Play My Song");
@@ -59,17 +60,6 @@ void mousePressed() {
    }
    } //End Mouse Pressed
    */
-  if ( mouseX>play1X && mouseX<play1X+play1Width && mouseY>play2Y && mouseY<play2Y+play2Height ) {
-    //Note, change to "Is the Song Playing Boolean"
-    if ( playButton == false ) {
-      playButton = true;
-      println("Wahoo! I'm playing you");
-    } else {
-      playButton = false;
-      println(" ");
-    }
-  }
-} //End Mouse Pressed
 //
 void keyPressed() {
   //Note, CAPs Lock on Code: key=='[CAP]' || key=='[lowercase]'
