@@ -99,15 +99,15 @@ float imageHeight = appHeight * 5/12;
 
 float musicbox1X = appWidth * 2.4/16;
 float musicbox1Y = appHeight * 7.3/12;
-float musicbox1Width = appWidth * 2.9/16; //8.7
+float musicbox1Width = appWidth * 2.8/16; //8.7
 float musicbox1Height = appHeight * 2.9/12;
 
-float musicbox2X = appWidth * 7.8/16;
+float musicbox2X = appWidth * 5.3/16;
 float musicbox2Y = appHeight * 7.3/12;
 float musicbox2Width = musicbox1Width; //8.7
 float musicbox2Height = musicbox1Height;
 
-float musicbox3X = appWidth * 5.1/16;
+float musicbox3X = appWidth * 8.2/16;
 float musicbox3Y = appHeight * 7.3/12;
 float musicbox3Width = musicbox1Width; //8.7
 float musicbox3Height = musicbox1Height;
