@@ -3,6 +3,8 @@
  - colourPopulation(), Colour Population
  - TBA
  */
+ //Global Variables
+ float lineDivX, lineDivY, lineDivWidth, lineDivHeight;
 //
 void divPopulation() {
   play1X = appWidth * 8.2/16;
@@ -20,10 +22,10 @@ void divPopulation() {
   playX3 = play1X + play1Width * 1/4;
   playY3 = play2Y + play2Height * 3/4;
   //
-  stringDivX = appWidth*70/279;
-  stringDivY = appHeight*22/216;
-  stringDivWidth = appWidth*140/279;
-  stringDivHeight = appHeight*22/216;
+  lineDivX = appWidth*70/279;
+  lineDivY = appHeight*22/216;
+  lineDivWidth = appWidth*140/279;
+  lineDivHeight = appHeight*22/216;
 } //End DIV Population
 //
 void colourPopulation() {

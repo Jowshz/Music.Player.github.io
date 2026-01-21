@@ -14,7 +14,7 @@ void quitButton() {
 void DIVs() {
   quitDIV();
   playDIV();
-  playButtonSymbol();
+  titleDIV();
 } //End DIVs
 //
 void quitDIV() {
@@ -25,6 +25,10 @@ void playDIV() {
   rect(play1X, play2Y, play1Width, play2Height);
 } // End Play Button DIV
 //
+void titleDIV() {
+  rect( lineDivX, lineDivY, lineDivWidth, lineDivHeight );
+} //End title DIV
+
 void playButtonSymbol() {
   triangle(playX1, playY1, playX2, playY2, playX3, playY3);
 }; //End Play Button Symbol

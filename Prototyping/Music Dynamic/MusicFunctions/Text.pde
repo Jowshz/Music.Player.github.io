@@ -20,8 +20,8 @@ PFont titleFont; //Font var name
 String Georgia = "Georgia";
 titleFont = createFont (Georgia, fontSize);
 float fontSizeGeorgia = 64.0;
-float divHeightGeorgia = lineDivHeight[0];
+float divHeightGeorgia = lineDivHeight;
 float GeorgiaAspectRatio = fontSizeGeorgia / divHeightGeorgia;
-fontSize = lineDivHeight[0]*GeorgiaAspectRatio;
+fontSize = lineDivHeight*GeorgiaAspectRatio;
 } //End Text Setup
 //End Program Text
