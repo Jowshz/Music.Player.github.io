@@ -278,6 +278,11 @@ float pause2Y = play2Y + play2Height * 1/4;
 float pause2Width = forRectWidth;
 float pause2Height = forRectHeight;
 
+float musicsongtext1X = appWidth * 2.5/16;
+float musicsongtext1Y = appHeight * 7.4/12;
+float musicsongtext1Width = appWidth * 2.6/16;
+float musicsongtext1Height = appHeight * 2.7/12;
+
 
 //
 //DIVs: for human confirmation of formulaic and variable accuracy
@@ -309,7 +314,7 @@ rect(pause2X, pause2Y, pause2Width, pause2Height);
 rect(musicbox1X, musicbox1Y, musicbox1Width, musicbox1Height);
 rect(musicbox2X, musicbox2Y, musicbox2Width, musicbox2Height);
 rect(musicbox3X, musicbox3Y, musicbox3Width, musicbox3Height);
-
+rect(musicsongtext1X, musicsongtext1Y, musicsongtext1Width, musicsongtext1Height);
 
 
 //
