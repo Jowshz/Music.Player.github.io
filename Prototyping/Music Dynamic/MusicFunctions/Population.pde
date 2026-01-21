@@ -3,8 +3,8 @@
  - colourPopulation(), Colour Population
  - TBA
  */
- //Global Variables
- float lineDivX, lineDivY, lineDivWidth, lineDivHeight;
+//Global Variables
+float[] lineDivX, lineDivY, lineDivWidth, lineDivHeight;
 //
 void divPopulation() {
   play1X = appWidth * 8.2/16;
@@ -22,10 +22,26 @@ void divPopulation() {
   playX3 = play1X + play1Width * 1/4;
   playY3 = play2Y + play2Height * 3/4;
   //
-  lineDivX = appWidth*70/279;
-  lineDivY = appHeight*22/216;
-  lineDivWidth = appWidth*140/279;
-  lineDivHeight = appHeight*22/216;
+int numberOfDIVs = 3;
+lineDivX = new float[numberOfDIVs];
+lineDivY = new float[numberOfDIVs];
+lineDivWidth = new float[numberOfDIVs];
+lineDivHeight = new float[numberOfDIVs];
+
+lineDivX[0] =  appWidth * 11.4/16;
+lineDivY[0] = appHeight * 7.3/12;
+lineDivWidth[0] = appWidth * 4/16;
+lineDivHeight[0] = appHeight * 3.2/12;
+
+lineDivX[1] = appWidth * 6.1/16;
+lineDivY[1] = appHeight * 0.3/12;
+lineDivWidth[1] = appWidth * 6/16;
+lineDivHeight[1] = appWidth * 0.9/12;
+
+lineDivX[2] = appWidth * 0.8/16;
+lineDivY[2] = appHeight * 1.8/12;
+lineDivWidth[2] = appWidth * 1.1/16;
+lineDivHeight[2] = appHeight * 0.6/12;
 } //End DIV Population
 //
 void colourPopulation() {

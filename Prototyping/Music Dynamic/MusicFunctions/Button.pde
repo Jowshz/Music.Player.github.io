@@ -26,7 +26,9 @@ void playDIV() {
 } // End Play Button DIV
 //
 void titleDIV() {
-  rect( lineDivX, lineDivY, lineDivWidth, lineDivHeight );
+  for ( int i=0; i<numberOfDIVs; i++ ) {
+    rect( lineDivX[i], lineDivY[i], lineDivWidth[i], lineDivHeight[i] );
+  }
 } //End title DIV
 
 void playButtonSymbol() {
@@ -42,7 +44,7 @@ void quitButtonActive() {
   quitDIV();
   fill(resetBackground);
   fill(quitButtonInk);
-  easyTextQuitButton();
+  //easyTextQuitButton();
   fill(resetInk);
 } //
 //
@@ -51,7 +53,7 @@ void quitButtonRegular() {
   quitDIV();
   fill(resetBackground);
   fill(quitButtonInk);
-  easyTextQuitButton();
+  //easyTextQuitButton();
   fill(resetInk);
 } //
 //

@@ -55,8 +55,6 @@ fontSize = lineDivHeight[0]*GeorgiaAspectRatio;
 for ( int i=0; i<numberOfDIVs; i++ ) {
   rect( lineDivX[i], lineDivY[i], lineDivWidth[i], lineDivHeight[i] );
 } //End FOR DIVs
-//
-//Drawing Text
 color blueInk = #3277D6; //Hexidecimal
 color whiteInk = #FFFFFF; //Grey Scale is 255
 color resetInk = whiteInk;

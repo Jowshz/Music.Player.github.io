@@ -25,6 +25,8 @@ color playColourBackground, playColourSymbol, playColourBackgroundActivated, pla
 color quitBackground, quitBackgroundActivated;
 Boolean nightMode=false;
 //
+int numberOfDIVs = 3;
+//
 void setup() {
   //Display CANVAS
   //size(); //width//height
