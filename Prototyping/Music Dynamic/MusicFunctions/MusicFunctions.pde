@@ -38,6 +38,7 @@ void setup() {
   nightMode=false;
   colourPopulation();
   musicSetup();
+  textSetup();
   //
 } //End setup
 //
