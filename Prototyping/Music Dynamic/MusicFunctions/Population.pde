@@ -19,6 +19,11 @@ void divPopulation() {
   playY2 = play2Y + play2Height * 1/2;
   playX3 = play1X + play1Width * 1/4;
   playY3 = play2Y + play2Height * 3/4;
+  //
+  stringDivX = appWidth*70/279;
+  stringDivY = appHeight*22/216;
+  stringDivWidth = appWidth*140/279;
+  stringDivHeight = appHeight*22/216;
 } //End DIV Population
 //
 void colourPopulation() {
