@@ -39,7 +39,7 @@ void setup() {
   colourPopulation();
   musicSetup();
   textSetup();
-  textMetaData(); //Note; println only
+  //textMetaData(); //Note; println only
   //
 } //End setup
 //
@@ -73,9 +73,8 @@ void keyPressed() {
   if (key=='D' || key=='d') {
     colourPopulation();
   } //Night Mode
-
-
-
+  //
+  //
   /* Key Board Short Cuts ... learning what the Music Buttons could be
    Note: CAP Lock with ||
    if ( key==? || key==? ) ; //'' only
