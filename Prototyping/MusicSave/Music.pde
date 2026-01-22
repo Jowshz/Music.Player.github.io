@@ -27,7 +27,7 @@ void musicSetup() {
   //
   String musicDirectory = upArrow + musicFile;//Concanetion
   println("Music Directory:", musicDirectory);
-  String soundEffectsDirectory = upArrow + musicFile + soundEffectsFile;
+  String soundEffectsDirectory = upArrow + soundEffectsFile;
   println("Sound Effects Directory:", soundEffectsDirectory);
   String file; //TO BE Rewritted and eleted once file is LOADED
   for ( int i=0; i<numberOfSongs; i++ ) {

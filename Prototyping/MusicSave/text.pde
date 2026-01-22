@@ -24,7 +24,7 @@ void textSetup() {
 void textdraw() {
   fill(purpleInk);
   textAlign (CENTER, CENTER);
-  //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
+  //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELIQNE]
   textFont(titleFont, fontSize);
 
 
