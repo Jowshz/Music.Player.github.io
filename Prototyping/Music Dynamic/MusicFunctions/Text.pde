@@ -15,6 +15,7 @@ void textSetup() {
   text[0] = "Hello this is the best music player EVER!!";
   text[1] = "Search";
   text[2] = "Home";
+  text[3] = "title";
   /*Fonts from OS
    println("Start of Console"); //ERROR
    String[] fontList = PFont.list(); //List all fonts available

@@ -22,7 +22,7 @@ void divPopulation() {
   playX3 = play1X + play1Width * 1/4;
   playY3 = play2Y + play2Height * 3/4;
   //
-int numberOfDIVs = 3;
+int numberOfDIVs = 4;
 lineDivX = new float[numberOfDIVs];
 lineDivY = new float[numberOfDIVs];
 lineDivWidth = new float[numberOfDIVs];
@@ -42,6 +42,12 @@ lineDivX[2] = appWidth * 0.8/16;
 lineDivY[2] = appHeight * 1.8/12;
 lineDivWidth[2] = appWidth * 1.1/16;
 lineDivHeight[2] = appHeight * 0.6/12;
+
+lineDivX[3] = appWidth * 2.9/16;
+lineDivY[3] = appHeight * 10.6/12;
+lineDivWidth[3] = appWidth * 2/16;
+lineDivHeight[3] = appHeight * 0.3/12;
+
 } //End DIV Population
 //
 void colourPopulation() {
@@ -85,6 +91,8 @@ void colourPopulation() {
     quitBackgroundActivated = red;
     quitButtonInk = black;
   } //End Night Mode Colors
+  //Ink
+  resetBlackInk = black;
+  
 } //End colour population
-//
 // End Subprogram Populaton
