@@ -39,6 +39,7 @@ void setup() {
   colourPopulation();
   musicSetup();
   textSetup();
+  textMetaData(); //Note; println only
   //
 } //End setup
 //

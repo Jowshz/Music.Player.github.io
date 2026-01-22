@@ -34,14 +34,14 @@ void textdraw() {
 
   float constantDecrease = 0.99;
   int iWhile=0;
-  while ( textWidth( title ) > stringDivWidth ) {
+  while ( textWidth( playListMetaData[currentSong].title() ) > StringDivWidth ) {
     iWhile++;
     //ERROR: infinite loop, requires exit() & println()
     fontSize *= constantDecrease;
     textFont(titleFont, fontSize);
   } //End WHILE Error Check Text-wrap
-  println("Iterations of WHILE:", iWhile, "\tPixel difference of divWidth & textWidth:", StringDivWidth-textWidth( title ), "\tUsing", constantDecrease*100+"%" );
-  text( title, StringDivX, StringDivY, StringDivWidth, StringDivHeight );
+  println("Iterations of WHILE:", iWhile, "\tPixel difference of divWidth & textWidth:", StringDivWidth-textWidth( playListMetaData[currentSong].title() ), "\tUsing", constantDecrease*100+"%" );
+  text( playListMetaData[currentSong].title(), StringDivX, StringDivY, StringDivWidth, StringDivHeight );
   fill(resetInk);
 }//End Text Draw
 //
