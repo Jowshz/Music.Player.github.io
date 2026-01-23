@@ -5,7 +5,7 @@
  */
 //Global Variables
 float StringDivX, StringDivY, StringDivWidth, StringDivHeight;
-color resetBLackInk, resetWhiteInk, purpleInk;
+color resetBlackInk, resetWhiteInk, purpleInk;
 //
 void divPopulation() {
   play1X = appWidth * 8.2/16;
@@ -71,7 +71,7 @@ void colourPopulation() {
   } //End Night Mode Colors
   //
   //Ink
-  resetBLackInk = black;
+  resetBlackInk = black;
   resetWhiteInk = white;
   purpleInk = #7D60F5;
 } //End colour population
