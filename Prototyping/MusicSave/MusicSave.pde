@@ -16,6 +16,7 @@ int appWidth, appHeight;
 float play1X, play2Y, play1Width, play2Height;
 float home1X, home1Y, home1Width, home1Height;
 float playX1, playY1, playX2, playY2, playX3, playY3;
+float StringDivX, StringDivY, StringDivWidth, StringDivHeight;
 //
 Boolean playButton=false, quitButton=false;
 //
@@ -23,8 +24,24 @@ color resetBackground, resetInk, resetBackgroundDay, resetInkDay, resetBackgroun
 color quitButtonInk;
 color playColourBackground, playColourSymbol, playColourBackgroundActivated, playColourSymbolActivated;
 color quitBackground, quitBackgroundActivated;
+color purpleInk;
+color titleInk;
 Boolean nightMode=false;
 //
+Minim minim; //initates entire class
+int numberOfSongs = 3; //Best Practice
+int numberOfSoundEffects = 1; //Best Practice
+AudioPlayer[] playList = new AudioPlayer[ numberOfSongs ];
+AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects];
+int currentSong = numberOfSongs - numberOfSongs; //ZERO, Math Property
+//
+AudioMetaData[] playListMetaData = new AudioMetaData[ numberOfSongs ];
+//
+String songTitle;
+float fontSize=0; //Able to set the First Font Size to AppHeight
+PFont titleFont;
+//
+//End Global Variables
 void setup() {
   //Display CANVAS
   //size(); //width//height
@@ -47,6 +64,7 @@ void draw() {
   //println ("My Mouse is", mouseX, mouseY);
   //println("Wahoo! I'm playing you");
   hoverOver_draw();
+  drawText();
 } //End draw
 //
 void mousePressed() {
@@ -71,6 +89,11 @@ void keyPressed() {
     quitButton();
   } //Quit Button
   if (key=='D' || key=='d') {
+    if ( nightMode == false ) {
+      nightMode = true;
+    } else {
+      nightMode = false;
+    }
     colourPopulation();
   } //Night Mode
   //

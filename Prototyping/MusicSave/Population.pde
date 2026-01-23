@@ -4,8 +4,6 @@
  - TBA
  */
 //Global Variables
-float StringDivX, StringDivY, StringDivWidth, StringDivHeight;
-color resetBlackInk, resetWhiteInk, purpleInk;
 //
 void divPopulation() {
   play1X = appWidth * 8.2/16;
@@ -41,6 +39,7 @@ void colourPopulation() {
   //
   //Button Colours
   color red = #A20D10;
+  color purple1 = #7D60F5;
   color blue = #3277D6;
   color lildarkgray = #555555;
   color darkgray = #000000;
@@ -56,6 +55,7 @@ void colourPopulation() {
     quitBackground = darkblue;
     quitBackgroundActivated = red;
     quitButtonInk = darkgray;
+    titleInk = purple1;
   } else
   {
     //
@@ -68,12 +68,9 @@ void colourPopulation() {
     quitBackground = white;
     quitBackgroundActivated = red;
     quitButtonInk = black;
+    titleInk = darkblue;
   } //End Night Mode Colors
   //
-  //Ink
-  resetBlackInk = black;
-  resetWhiteInk = white;
-  purpleInk = #7D60F5;
 } //End colour population
 //
 // End Subprogram Populaton

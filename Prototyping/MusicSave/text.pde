@@ -2,36 +2,31 @@
  - Easy Text, default font, size
  - TBA
  */
-//Global Variables
-String songTitle;
-float fontSize;
-PFont titleFont;
+void drawText() {
+  textdraw();
+  songTitle();
+  //
+} // End Draw Text
 //
 void easyTextQuitButton() {
-  text("X", home1X+home1Width*1/2, home1Y+home1Height*3/5);
+  text("X", home1X+home1Width*1/2, home1Y+home1Height*1/2); //adjust ratios or decimals until working
 } //End Easy Text
 //
 void textSetup() {
   fontSize = appHeight; //Entrie Program
+  fontSize = StringDivHeight;
   String Georgia = "Georgia";
   titleFont = createFont (Georgia, fontSize);
   //
   float fontSizeGeorgia = 64.0;
   float GeorgiaAspectRatio = fontSizeGeorgia / StringDivHeight;
   fontSize = StringDivHeight*GeorgiaAspectRatio;
+  //
 } //End Text Setup
 //
 void textdraw() {
-  fill(purpleInk);
-  textAlign (CENTER, CENTER);
-  //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELIQNE]
+  //Only one font
   textFont(titleFont, fontSize);
-
-
-  //Errors
-
-
-
   float constantDecrease = 0.99;
   int iWhile=0;
   while ( textWidth( playListMetaData[currentSong].title() ) > StringDivWidth ) {
@@ -39,10 +34,15 @@ void textdraw() {
     //ERROR: infinite loop, requires exit() & println()
     fontSize *= constantDecrease;
     textFont(titleFont, fontSize);
-  } //End WHILE Error Check Text-wrap
-  println("Iterations of WHILE:", iWhile, "\tPixel difference of divWidth & textWidth:", StringDivWidth-textWidth( playListMetaData[currentSong].title() ), "\tUsing", constantDecrease*100+"%" );
-  text( playListMetaData[currentSong].title(), StringDivX, StringDivY, StringDivWidth, StringDivHeight );
+  }
+  //println("Iterations of WHILE:", iWhile, "\tPixel difference of divWidth & textWidth:", StringDivWidth-textWidth( playListMetaData[currentSong].title() ), "\tUsing", constantDecrease*100+"%" );
+}
+void songTitle() {
+  textAlign (CENTER, CENTER); //Align X&Y, see Processing.org / Reference
+  //Values: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
+  fill(titleInk); //Ink, hexidecimal copied from Color Selector
+  text( songTitle, StringDivX, StringDivY, StringDivWidth, StringDivHeight );
   fill(resetInk);
 }//End Text Draw
 //
-//
+//End Subprogra Text

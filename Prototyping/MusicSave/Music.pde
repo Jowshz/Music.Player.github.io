@@ -1,13 +1,7 @@
 /* Music Subprogram
  */
 //
-//GlobalVariables
-Minim minim; //initiates entire class
-int numberOfSongs = 3; //Best Practice
-int numberOfSoundEffects = 1; //Best Practice
-AudioPlayer[] playList = new AudioPlayer[ numberOfSongs ];
-AudioPlayer[] soundEffects = new AudioPlayer[ numberOfSoundEffects];
-int currentSong = numberOfSongs - numberOfSongs;  //ZERO, Math Property
+
 //
 void musicSetup() {
   //Music Loading - STRUCTURED Review
@@ -30,6 +24,7 @@ void musicSetup() {
   String soundEffectsDirectory = upArrow + soundEffectsFile;
   println("Sound Effects Directory:", soundEffectsDirectory);
   String file; //TO BE Rewritted and eleted once file is LOADED
+  //
   for ( int i=0; i<numberOfSongs; i++ ) {
     file = musicDirectory + songName[i] + fileExtension_mp3;
     playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
