@@ -4,6 +4,8 @@
  */
 //Global Variables
 String songTitle;
+float fontSize;
+PFont titleFont;
 //
 /*void easyTextQuitButton() { //End Easy Text
  text("X", home1X+home1Width*1/2, home1Y+home1Height*3/5);
@@ -21,15 +23,17 @@ void textSetup() {
    String[] fontList = PFont.list(); //List all fonts available
    printArray(fontList); //List all fonts to choose
    */
-  float fontSize = appHeight; //Entrie Program
-  PFont titleFont; //Font var name
+  fontSize = appHeight; //Entrie Program
   String Georgia = "Georgia";
   titleFont = createFont (Georgia, fontSize);
+  //
   float fontSizeGeorgia = 64.0;
   float divHeightGeorgia = lineDivHeight[0];
   float GeorgiaAspectRatio = fontSizeGeorgia / divHeightGeorgia;
   fontSize = lineDivHeight[0]*GeorgiaAspectRatio;
   //
+} //End Text Setup
+void textdraw() {
   color blueInk = #3277D6; //Hexidecimal
   color whiteInk = #FFFFFF; //Grey Scale is 255
   color resetInk = whiteInk;
@@ -42,13 +46,13 @@ void textSetup() {
   float constantDecrease = 0.99;
   int iWhile=0;
   for ( int i=0; i<3; i++ ) {
-    while ( textWidth( text[i] ) > lineDivWidth[i] ) {
+    while ( textWidth( playListMetaData[currentSong].title() ) > lineDivWidth[i] ) {
       iWhile++;
       //ERROR: infinite loop, requires exit() & println()
       fontSize *= constantDecrease;
       textFont(titleFont, fontSize);
     } //End WHILE Error Check Text-wrap
-    println("Iterations of WHILE:", iWhile, "\tPixel difference of divWidth & textWidth:", lineDivWidth[i]-textWidth( text[i] ), "\tUsing", constantDecrease*100+"%" ); //Plus sign is concatenation for % symbol, exemplar
+    println("Iterations of WHILE:", iWhile, "\tPixel difference of divWidth & textWidth:", lineDivWidth[i]-textWidth( playListMetaData[currentSong].title() ), "\tUsing", constantDecrease*100+"%" ); //Plus sign is concatenation for % symbol, exemplar
   } //End FOR Loop, Font Size Check in DIVs
   //
 
@@ -60,11 +64,11 @@ void textSetup() {
   for ( int i=0; i<3; i++) {
     if (i == 1) {
       textAlign (LEFT, CENTER); //Align X&Y, see Processing.org / reference
-      text(text[i], lineDivX[i] + padding, lineDivY[i], lineDivWidth[i], lineDivHeight[i]); //+pad for x to create space
+      text(playListMetaData[currentSong].title(), lineDivX[i] + padding, lineDivY[i], lineDivWidth[i], lineDivHeight[i]); //+pad for x to create space
     } else {
       //all other texts
       textAlign(CENTER, CENTER);
-      text(text[i], lineDivX[i], lineDivY[i], lineDivWidth[i], lineDivHeight[i]);
+      text(playListMetaData[currentSong].title(), lineDivX[i], lineDivY[i], lineDivWidth[i], lineDivHeight[i]);
     }
     //Values for text: [LEFT | CENTER | RIGHT] & [TOP | CENTER | BOTTOM | BASELINE]
   }

@@ -26,10 +26,12 @@ void musicSetup() {
   String fileExtension_mp3 = ".mp3";
   //
   String musicDirectory = upArrow + musicFile;//Concanetion
-  String soundEffectsDirectory = upArrow + musicFile + soundEffectsFile;
+  println("Music Directory:", musicDirectory);
+  String soundEffectsDirectory = upArrow + soundEffectsFile;
+  println("Sound Effects Directory:", soundEffectsDirectory);
   String file; //TO BE Rewritted and eleted once file is LOADED
   for ( int i=0; i<numberOfSongs; i++ ) {
-    file = musicDirectory + songName + fileExtension_mp3;
+    file = musicDirectory + songName[i] + fileExtension_mp3;
     playList[ currentSong ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
     currentSong++;
   } //End File Loading
