@@ -43,4 +43,15 @@ void textMetaData () {
   println( "Encoded: " + playListMetaData[currentSong].encoded() );
 } //End Test Meta Data
 //
-//End Subprogram Music Meta Data
+void saveSongTitle() {
+  //See draw()
+  //Note: See Music Loading if NULL
+  if ( playList[currentSong].isPlaying() == true ) {
+    //titleDIV();
+    songTitle =  playListMetaData[currentSong].title();
+  } else {
+    //titleDIV();
+    songTitle = "Nothing";
+  }
+}
+ //End Subprogram Music Meta Data

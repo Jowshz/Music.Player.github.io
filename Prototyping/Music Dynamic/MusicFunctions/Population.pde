@@ -5,7 +5,7 @@
  */
 //Global Variables
 float[] lineDivX, lineDivY, lineDivWidth, lineDivHeight;
-color resetBlackInk, resetWhiteInk, purpleInk;
+color resetBlackInk, resetWhiteInk, blueInk;
 //
 void divPopulation() {
   play1X = appWidth * 8.2/16;
@@ -94,5 +94,6 @@ void colourPopulation() {
   //Ink
   resetBlackInk = black;
   resetWhiteInk = white;
-  purpleInk = #7D60F5;} //End colour population
+  blueInk = #7D60F5;
+} //End colour population
 // End Subprogram Populaton
