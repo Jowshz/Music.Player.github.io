@@ -15,7 +15,7 @@ void musicSetup() {
   songName[1] = "SeeYouAgain";
   songName[2] = "danielCaesarToronto";
 
-
+ 
   String soundEffect1 = "ROBLOXButtonSE";
   String fileExtension_mp3 = ".mp3";
   //
@@ -26,10 +26,10 @@ void musicSetup() {
   String file; //TO BE Rewritted and eleted once file is LOADED
   //
   for ( int i=0; i<numberOfSongs; i++ ) {
-    file = musicDirectory + songName[i] + fileExtension_mp3;
-    playList[ i ] = minim.loadFile( file ); //ERROR: Verify Spelling & Library installed, Sketch / Import Library
-    currentSong++;
-  } //End File Loading
+  file = musicDirectory + songName[i] + fileExtension_mp3;
+  playList[ i ] = minim.loadFile( file );
+  playListMetaData[ i ] = playList[ i ].getMetaData(); // ADD THIS LINE
+}
   currentSong=0;
   file = soundEffectsDirectory + soundEffect1 + fileExtension_mp3;
   soundEffects[currentSong] = minim.loadFile( file );

@@ -68,7 +68,11 @@ void draw() {
 } //End draw
 //
 void mousePressed() {
+    soundEffects[0].rewind(); // Resets sound effect to start
+    soundEffects[0].play();   // Plays Roblox sound effect
+    
   if ( mouseX>home1X && mouseX<home1X+home1Width && mouseY>home1Y &&mouseY<home1Y+home1Height ) {
+    delay(1000); // Optional: brief pause so the quit sound plays before closing
     quitButton();
   }
 } //End Mouse Pressed
@@ -136,7 +140,9 @@ void keyPressed() {
    */
   //if ( key=='P' || key=='p' ) playList[currentSong].play(); //Simple Play, no double tap possible
   //
-  if ( key=='P' || key=='p' ) playList[currentSong].loop(0); //Simple Play, double tap possible
+  if ( key=='P' || key=='p' ) {
+    playList[currentSong].loop(0); //Simple Play, double tap possible
+  }
   /* Note: double tap is automatic rewind, no pause
    Symbol is two triangles
    This changes what the button might become after it is pressed
@@ -151,7 +157,7 @@ void keyPressed() {
   }
   //if ( key=='S' || key=='s' ) song[currentSong].pause(); //Simple Stop, no double taps
   //
-  if ( key=='S' | key=='s' ) {
+  if ( key=='S' || key=='s' ) {
     if ( playList[currentSong].isPlaying() ) {
       playList[currentSong].pause(); //single tap
     } else {
@@ -206,7 +212,12 @@ void keyPressed() {
   }
   //if ( key=='B' || key=='b' ) ; // Previous, Back //Students to finish
   //
-  if ( key=='Y' || key=='y' ) currentSong = int(random(numberOfSongs)); //random(0, numberOfSongs)
+  if ( key=='Y' || key=='y' ) {
+  playList[currentSong].pause();
+  playList[currentSong].rewind();
+  currentSong = int(random(numberOfSongs));
+  playList[currentSong].play();
+} //random(0, numberOfSongs)
   //
   //if ( key=='S' || key=='s' ) ; // Shuffle - PLAY (Random)
   //Note: will randomize the currentSong number

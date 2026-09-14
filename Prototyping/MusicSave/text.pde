@@ -3,6 +3,7 @@
  - TBA
  */
 void drawText() {
+  saveSongTitle(); // Keeps the song title variable updated
   textdraw();
   songTitle();
   //
