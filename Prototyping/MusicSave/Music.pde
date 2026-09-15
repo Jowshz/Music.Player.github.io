@@ -26,27 +26,29 @@ void musicSetup() {
   String file; //TO BE Rewritted and eleted once file is LOADED
   //
   for ( int i=0; i<numberOfSongs; i++ ) {
-  file = musicDirectory + songName[i] + fileExtension_mp3;
-  playList[ i ] = minim.loadFile( file );
+    file = musicDirectory + songName[i] + fileExtension_mp3;
+    playList[ i ] = minim.loadFile( file );
   playListMetaData[ i ] = playList[ i ].getMetaData(); // ADD THIS LINE
 }
   currentSong=0;
   file = soundEffectsDirectory + soundEffect1 + fileExtension_mp3;
-  soundEffects[currentSong] = minim.loadFile( file );
-  //
+  soundEffects[0] = minim.loadFile( file );
+  
+// Check each song in the playlist
   for ( int i=0; i<numberOfSongs; i++ ) {
-    if ( playList[i]==null || soundEffects[currentSong]==null) { //ERROR, play list is NULL
-      //See FILE or minim.loadFile
-      println("Did the music and sound load properly");
+    if ( playList[i] == null ) {
+      println("Song failed to load at index " + i);
       printArray(playList);
-      printArray(soundEffects);
       /*
-  println("Music PathWay", musicDirectory);
-       println("Full Music File Pathway", file);
-       */
-    } //End Music Setup
+      println("Music PathWay", musicDirectory);
+      println("Full Music File Pathway", file);
+      */
+    }
+  } //End Music Setup
+
+  // Check the sound effect once
+  if ( soundEffects[0] == null ) {
+    println("Sound effect failed to load!");
+    printArray(soundEffects);
   }
-  //
 } //End File Loading
-//
-//

@@ -10,7 +10,7 @@ void drawText() {
 } // End Draw Text
 //
 void easyTextQuitButton() {
-  text("X", home1X+home1Width*1/2, home1Y+home1Height*1/2); //adjust ratios or decimals until working
+  text("X", exit1X+exit1Width*1/2, exit1Y+exit1Height*1/2); //adjust ratios or decimals until working
 } //End Easy Text
 //
 void textSetup() {

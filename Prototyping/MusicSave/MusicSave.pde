@@ -12,13 +12,61 @@ import ddf.minim.spi.*;
 import ddf.minim.ugens.*;
 //
 //Global Variables
+
 int appWidth, appHeight;
+
+//
 float play1X, play2Y, play1Width, play2Height;
-float home1X, home1Y, home1Width, home1Height;
+float stopX, stopY, stopWidth, stopHeight;
+float mute1X1, mute1Y1, mute2X2, mute2Y2, mute3X1, mute3Y1, mute4X2, mute4Y2;
 float playX1, playY1, playX2, playY2, playX3, playY3;
+float backX, backY, backWidth, backHeight;
+float forX, forY, forWidth, forHeight;
+float lyrX, lyrY, lyrWidth, lyrHeight;
+float soundX, soundY, soundWidth, soundHeight;
+float queueX, queueY, queueWidth, queueHeight;
+float titleX, titleY, titleWidth, titleHeight;
+float nameX, nameY, nameWidth, nameHeight;
+float numb2X, numb2Y, numb2Width, numb2Height;
+float pfpX, pfpY, pfpWidth, pfpHeight;
+float numb1X, numb1Y, numb1Width, numb1Height;
+float textX, textY, textWidth, textHeight;
+float imageX, imageY, imageWidth, imageHeight;
+float musicbox1X, musicbox1Y, musicbox1Width, musicbox1Height;
+float musicbox2X, musicbox2Y, musicbox2Width, musicbox2Height;
+float musicbox3X, musicbox3Y, musicbox3Width, musicbox3Height;
+float exit1X, exit1Y, exit1Width, exit1Height;
+float home2X, home2Y, home2Width, home2Height;
+float magX, magY, magWidth, magHeight;
+float searchX, searchY, searchWidth, searchHeight;
+float music1X1, music1Y1, music2X2, music2Y2;
+float menu1X1, menu1Y1, menu2X2, menu2Y2;
+float bar1X1, bar1Y1, bar2X2, bar2Y2;
+float forTriX1, forTriY1, forTriX2, forTriY2, forTriX3, forTriY3;
+float forRectX, forRectY, forRectWidth, forRectHeight;
+float backTriX1, backTriY1, backTriX2, backTriY2, backTriX3, backTriY3;
+float backRectX, backRectY, backRectWidth, backRectHeight;
+float dotX, dotY, dotD, dot2X, dot2Y, dot2D, dot3X, dot3Y, dot3D;
+float quelineX1, quelineY1, quelineX2, quelineY2;
+float queline2X1, queline2Y1, queline2X2, queline2Y2;
+float queline3X1, queline3Y1, queline3X2, queline3Y2;
+float lyrectX, lyrectY, lyrectWidth, lyrectHeight;
+float lyrline1X1, lyrline1Y1, lyrline1X2, lyrline1Y2;
+float lyrline2X1, lyrline2Y1, lyrline2X2, lyrline2Y2;
+float lyrline3X1, lyrline3Y1, lyrline3X2, lyrline3Y2;
+float soundbutX, soundbutY, soundbut2X, soundbut2Y, soundbut3X, soundbut3Y, soundbut4X, soundbut4Y, soundbut5X, soundbut5Y;
+float soundln1X1, soundln1Y1, soundln1X2, soundln1Y2;
+float soundln2X1, soundln2Y1, soundln2X2, soundln2Y2;
+float soundln3X1, soundln3Y1, soundln3X2, soundln3Y2;
+float soundln4X1, soundln4Y1, soundln4X2, soundln4Y2;
+float soundbarX, soundbarY, soundbarWidth, soundbarHeight;
+float pause1X, pause1Y, pause1Width, pause1Height;
+float pause2X, pause2Y, pause2Width, pause2Height;
+float musicsongtext1X, musicsongtext1Y, musicsongtext1Width, musicsongtext1Height;
 float StringDivX, StringDivY, StringDivWidth, StringDivHeight;
 //
 Boolean playButton=false, quitButton=false;
+Boolean nightMode=false;
 //
 color resetBackground, resetInk, resetBackgroundDay, resetInkDay, resetBackgroundNight, resetInkNight;
 color quitButtonInk;
@@ -26,7 +74,6 @@ color playColourBackground, playColourSymbol, playColourBackgroundActivated, pla
 color quitBackground, quitBackgroundActivated;
 color purpleInk;
 color titleInk;
-Boolean nightMode=false;
 //
 Minim minim; //initates entire class
 int numberOfSongs = 3; //Best Practice
@@ -58,6 +105,10 @@ void setup() {
   textSetup();
   //textMetaData(); //Note; println only
   //
+  displayPopulation(); // Populates EvilSkull variables
+  musicSetup();
+  textSetup();
+  imageSetup();        // Loads and scales your image
 } //End setup
 //
 void draw() {
@@ -65,13 +116,22 @@ void draw() {
   //println("Wahoo! I'm playing you");
   hoverOver_draw();
   drawText();
+  // Draw DIV (Bounding Box for Image)
+  stroke(0);
+  noFill();
+  rect(EvilSkullX, EvilSkullY, EvilSkullWidth, EvilSkullHeight);
+
+  // Draw scaled image to fill the container completely
+  if (image1 != null) {
+    image(image1, offsetX, offsetY, EvilSkullWidthAdjusted1, EvilSkullHeightAdjusted1);
+  }
 } //End draw
 //
 void mousePressed() {
     soundEffects[0].rewind(); // Resets sound effect to start
     soundEffects[0].play();   // Plays Roblox sound effect
     
-  if ( mouseX>home1X && mouseX<home1X+home1Width && mouseY>home1Y &&mouseY<home1Y+home1Height ) {
+  if ( mouseX>exit1X && mouseX<exit1X+exit1Width && mouseY>exit1Y &&mouseY<exit1Y+exit1Height ) {
     delay(1000); // Optional: brief pause so the quit sound plays before closing
     quitButton();
   }
