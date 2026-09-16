@@ -23,35 +23,44 @@
 void textMetaData () {
   //Print What is available on a particular song
   //See Image / Properties/ Details
-  println();
-  println( "File Name: " + playListMetaData[currentSong].fileName() );
-  println( "Length (in milliseconds): " + playListMetaData[currentSong].length() );
-  println( "Title: " + playListMetaData[currentSong].title() );
-  println( "Author: " + playListMetaData[currentSong].author() );
-  println( "Album: " + playListMetaData[currentSong].album() );
-  println( "Date: " + playListMetaData[currentSong].date() );
-  println( "Comment: " + playListMetaData[currentSong].comment() );
-  println( "Lyrics: " + playListMetaData[currentSong].lyrics() );
-  println( "Track: " + playListMetaData[currentSong].track() );
-  println( "Genre: " + playListMetaData[currentSong].genre() );
-  println( "Copyright: " + playListMetaData[currentSong].copyright() );
-  println( "Disc: " + playListMetaData[currentSong].disc() );
-  println( "Composer: " + playListMetaData[currentSong].composer() );
-  println( "Orchestra: " + playListMetaData[currentSong].orchestra() );
-  println( "Publisher: " + playListMetaData[currentSong].publisher() );
-  println( "Encoded: " + playListMetaData[currentSong].encoded() );
+  if (playListMetaData[currentSong] != null) {
+    println();
+    println( "File Name: " + playListMetaData[currentSong].fileName() );
+    println( "Length (in milliseconds): " + playListMetaData[currentSong].length() );
+    println( "Title: " + playListMetaData[currentSong].title() );
+    println( "Author: " + playListMetaData[currentSong].author() );
+    println( "Album: " + playListMetaData[currentSong].album() );
+    println( "Date: " + playListMetaData[currentSong].date() );
+    println( "Comment: " + playListMetaData[currentSong].comment() );
+    println( "Lyrics: " + playListMetaData[currentSong].lyrics() );
+    println( "Track: " + playListMetaData[currentSong].track() );
+    println( "Genre: " + playListMetaData[currentSong].genre() );
+    println( "Copyright: " + playListMetaData[currentSong].copyright() );
+    println( "Disc: " + playListMetaData[currentSong].disc() );
+    println( "Composer: " + playListMetaData[currentSong].composer() );
+    println( "Orchestra: " + playListMetaData[currentSong].orchestra() );
+    println( "Publisher: " + playListMetaData[currentSong].publisher() );
+    println( "Encoded: " + playListMetaData[currentSong].encoded() );
+  } else {
+    println("No metadata available for current song.");
+  }
 } //End Test Meta Data
 //
 void saveSongTitle() {
   //See draw()
   //Note: See Music Loading if NULL
-  if ( playList[currentSong].isPlaying() == true) {
-    //titleDIV();
-    songTitle = playListMetaData[currentSong].title(); //Used to switch titles in draw()
-    //println("Check VAR currentSongFileName", currentSongFileName);
+  if (playListMetaData[currentSong] != null) {
+    String metaTitle = playListMetaData[currentSong].title();
+    
+    // Fallback to filename if ID3 title tag is missing or blank
+    if (metaTitle != null && metaTitle.length() > 0) {
+      songTitle = metaTitle;
+    } else {
+      songTitle = playListMetaData[currentSong].fileName();
+    }
   } else {
     //titleDIV();
-    songTitle = "Nothing";
+    songTitle = "No song xd";
   }
 } //End Print Song Title in draw()
 //End Subprogram Music Meta Data

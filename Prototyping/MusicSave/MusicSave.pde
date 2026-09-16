@@ -97,18 +97,17 @@ void setup() {
   appHeight = displayHeight;
   //
   divPopulation();
+  displayPopulation(); // Populates EvilSkull variables
   DIVs(); //See Buttons
   musicButtonShapes();
   nightMode=false;
   colourPopulation();
   musicSetup();
   textSetup();
+  imageSetup();        // Loads and scales your image
+
   //textMetaData(); //Note; println only
   //
-  displayPopulation(); // Populates EvilSkull variables
-  musicSetup();
-  textSetup();
-  imageSetup();        // Loads and scales your image
 } //End setup
 //
 void draw() {
@@ -128,9 +127,10 @@ void draw() {
 } //End draw
 //
 void mousePressed() {
+    if (soundEffects != null && soundEffects[0] != null) {
     soundEffects[0].rewind(); // Resets sound effect to start
     soundEffects[0].play();   // Plays Roblox sound effect
-    
+    }
   if ( mouseX>exit1X && mouseX<exit1X+exit1Width && mouseY>exit1Y &&mouseY<exit1Y+exit1Height ) {
     delay(1000); // Optional: brief pause so the quit sound plays before closing
     quitButton();
@@ -149,17 +149,12 @@ void mousePressed() {
 void keyPressed() {
   //Note, CAPs Lock on Code: key=='[CAP]' || key=='[lowercase]'
   //
-  if (key=='Q' || key=='q') {
-    quitButton();
-  } //Quit Button
+  if (key=='Q' || key=='q') { quitButton();
+  } 
   if (key=='D' || key=='d') {
-    if ( nightMode == false ) {
-      nightMode = true;
-    } else {
-      nightMode = false;
-    }
-    colourPopulation();
-  } //Night Mode
+  nightMode = !nightMode; // Flips true to false, or false to true
+  colourPopulation();
+}//Night Mode
   //
   //
   /* Key Board Short Cuts ... learning what the Music Buttons could be
@@ -200,29 +195,22 @@ void keyPressed() {
    */
   //if ( key=='P' || key=='p' ) playList[currentSong].play(); //Simple Play, no double tap possible
   //
-  if ( key=='P' || key=='p' ) {
-    playList[currentSong].loop(0); //Simple Play, double tap possible
-  }
+  if ( key=='P' || key=='p' ) playList[currentSong].loop(0); //Simple Play, double tap possible
   /* Note: double tap is automatic rewind, no pause
    Symbol is two triangles
    This changes what the button might become after it is pressed
    */
   if ( key=='O' || key=='o' ) { // Pause
     //
-    if ( playList[currentSong].isPlaying() ) {
-      playList[currentSong].pause();
-    } else {
-      playList[currentSong].play();
-    }
+    if (playList != null && playList[currentSong] != null) {
+    if (playList[currentSong].isPlaying()) playList[currentSong].pause();
+    else playList[currentSong].play();
   }
   //if ( key=='S' || key=='s' ) song[currentSong].pause(); //Simple Stop, no double taps
   //
   if ( key=='S' || key=='s' ) {
-    if ( playList[currentSong].isPlaying() ) {
-      playList[currentSong].pause(); //single tap
-    } else {
-      playList[currentSong].rewind(); //double tap
-    }
+    if (playList[currentSong].isPlaying()) playList[currentSong].pause();
+    else playList[currentSong].rewind();
   }
   if ( key=='L' || key=='l' ) playList[currentSong].loop(1); // Loop ONCE: Plays, then plays again, then stops & rewinds
   if ( key=='K' || key=='k' ) playList[currentSong].loop(); // Loop Infinitely //Parameter: BLANK or -1
@@ -234,15 +222,11 @@ void keyPressed() {
     //NOTE: MUTE has NO built-in PUASE button, NO built-in rewind button
     //ERROR: if song near end of file, user will not know song is at the end
     //Known ERROR: once song plays, MUTE acts like it doesn't work
-    if ( playList[currentSong].isMuted() ) {
-      //ERROR: song might not be playing
+    if (playList[currentSong].isMuted()) playList[currentSong].unmute();      //ERROR: song might not be playing
       //CATCH: ask .isPlaying() or !.isPlaying()
-      playList[currentSong].unmute();
-    } else {
+    else playList[currentSong].mute();
       //Possible ERROR: Might rewind the song
-      playList[currentSong].mute();
-    }
-  }
+   }
   if ( key==CODED || keyCode==ESC ) exit(); // QUIT //UP
   //if ( key=='Q' || key=='q' ) exit(); //Depreciated, already coded, See Buttons // QUIT
   //
@@ -270,9 +254,28 @@ void keyPressed() {
       //song[currentSong].play();
     }
   }
-  //if ( key=='B' || key=='b' ) ; // Previous, Back //Students to finish
+  if ( key=='B' || key=='b' ) { // Previous, Back //Students to finish
+  if ( playList[currentSong].isPlaying() ) {
+      playList[currentSong].pause();
+      playList[currentSong].rewind();
+      if ( currentSong == 0 ) {
+        currentSong = numberOfSongs - 1;
+      } else {
+        currentSong--;
+      }
+      playList[currentSong].play();
+    } else {
+      playList[currentSong].rewind();
+      if ( currentSong == 0 ) {
+        currentSong = numberOfSongs - 1;
+      } else {
+        currentSong--;
+      }
+    }
+  }
   //
   if ( key=='Y' || key=='y' ) {
+  if (playList != null && playList[currentSong] != null) {
   playList[currentSong].pause();
   playList[currentSong].rewind();
   currentSong = int(random(numberOfSongs));

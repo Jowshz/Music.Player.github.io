@@ -27,9 +27,10 @@ void musicSetup() {
   //
   for ( int i=0; i<numberOfSongs; i++ ) {
     file = musicDirectory + songName[i] + fileExtension_mp3;
-    playList[ i ] = minim.loadFile( file );
-  playListMetaData[ i ] = playList[ i ].getMetaData(); // ADD THIS LINE
-}
+    if (playList[i] != null) {
+      playListMetaData[i] = playList[i].getMetaData();
+    }
+  }
   currentSong=0;
   file = soundEffectsDirectory + soundEffect1 + fileExtension_mp3;
   soundEffects[0] = minim.loadFile( file );
@@ -37,7 +38,7 @@ void musicSetup() {
 // Check each song in the playlist
   for ( int i=0; i<numberOfSongs; i++ ) {
     if ( playList[i] == null ) {
-      println("Song failed to load at index " + i);
+      println("Song failed to load at index " + i + " path: " + musicDirectory + songName[i] + fileExtension_mp3);
       printArray(playList);
       /*
       println("Music PathWay", musicDirectory);
@@ -48,7 +49,7 @@ void musicSetup() {
 
   // Check the sound effect once
   if ( soundEffects[0] == null ) {
-    println("Sound effect failed to load!");
+    println("Sound effect failed to load!" + file);
     printArray(soundEffects);
   }
 } //End File Loading

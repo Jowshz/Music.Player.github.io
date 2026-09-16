@@ -302,8 +302,8 @@ void colourPopulation() {
   //
   resetBackgroundDay = white;
   resetInkDay = black;
-  resetBackgroundNight = 256/4;
-  resetInkNight = int(256*0.75);
+  resetBackgroundNight = color(64);
+  resetInkNight = color(192);
   //
   //Button Colours
   color red = #A20D10;

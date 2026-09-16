@@ -1,5 +1,6 @@
 /* Image Subprogram
  */
+// Global Image Variables
 
 void imageSetup() {
   // Directory & Pathway Concatenation
@@ -13,18 +14,22 @@ void imageSetup() {
   errorImage = loadImage("error.png");
   image1 = loadImage(imagePathway1);
   
-  if (image1 == null) {
-    println("NullPointerException on Image ... Spelling Mistake with Pathway Concatenation");
-    image1 = errorImage;
+if (image1 == null) {
+    println("Error: Image failed to load at pathway: " + imagePathway1);
+    if (errorImage != null) {
+      image1 = errorImage;
+    } else {
+      println("Error: Fallback error.png is also missing.");
+      return; // Exit early to prevent NullPointerException
+    }
   }
-
-  int imageWidth1 = 296;  // Hardcoded source image width
-  int imageHeight1 = 170; // Hardcoded source image height
+  int imageWidth1 = image1.width;  // Hardcoded source image width
+  int imageHeight1 = image1.height; // Hardcoded source image height
 
   // Scale-to-Fill Algorithm (Covers 100% of the box without distortion)
   float scaleX = EvilSkullWidth / float(imageWidth1);
   float scaleY = EvilSkullHeight / float(imageHeight1);
-  float scaleFactor = max(scaleX, scaleY); // Pick larger scale factor
+  float scaleFactor= min(scaleX, scaleY); // Pick larger scale factor
 
   EvilSkullWidthAdjusted1 = imageWidth1 * scaleFactor;
   EvilSkullHeightAdjusted1 = imageHeight1 * scaleFactor;

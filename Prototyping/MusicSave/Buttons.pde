@@ -59,12 +59,10 @@ void titleDIV() {
 //
 void playButtonSymbol() {
   triangle(playX1, playY1, playX2, playY2, playX3, playY3);
-}; //End Play Button Symbol
+} //End Play Button Symbol
 //
 void musicButtonShapes() {
   playButtonSymbol();
-
-triangle(playX1, playY1, playX2, playY2, playX3, playY3);
   triangle(forTriX1, forTriY1, forTriX2, forTriY2, forTriX3, forTriY3);
   triangle(backTriX1, backTriY1, backTriX2, backTriY2, backTriX3, backTriY3);
   line(mute1X1, mute1Y1, mute2X2, mute2Y2);
@@ -99,7 +97,7 @@ void quitButtonActive() {
   quitDIV();
   fill(resetBackground);
   fill(quitButtonInk);
-  //easyTextQuitButton();
+  easyTextQuitButton();
   fill(resetInk);
 } //
 //
@@ -108,7 +106,7 @@ void quitButtonRegular() {
   quitDIV();
   fill(resetBackground);
   fill(quitButtonInk);
-  //easyTextQuitButton();
+  easyTextQuitButton();
   fill(resetInk);
 } //
 //
