@@ -120,7 +120,7 @@ void draw() {
   drawText();
   
   if (image1 != null) {
-    image(image1, offsetX, offsetY, EvilSkullWidthAdjusted1, EvilSkullHeightAdjusted1);
+    image(image1, imageX, imageY, imageWidth, imageHeight);
   }
 } //End draw
 //
