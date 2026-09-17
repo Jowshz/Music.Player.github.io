@@ -7,11 +7,13 @@
 //
 void quitButton() {
   noLoop(); //Adjusts the exit of the program using finishing draw()
-  exit(); //With noLoop(), exit happens here
   println("Final Line of mousePressed and finishes draw()");
+  exit(); //With noLoop(), exit happens here
 } //End Quit Button
 //
 void DIVs() {
+  fill(resetBackground); 
+  stroke(resetInk);       // Restores crisp box borders
   quitDIV();
   playDIV();
   titleDIV();
@@ -131,13 +133,13 @@ void hoverOver_draw() {
     quitButtonActive();
   } else {
     quitButtonRegular();
-  }//End Play Button Hover Over
+  }//End Quit Button Hover Over
   if ( mouseX>play1X && mouseX<play1X+play1Width && mouseY>play2Y && mouseY<play2Y+play2Height ) {
     if ( playButton == false ) playButtonActive();
   } else {
     playButtonReady();
     if ( playButton == true ) playButtonActive();
-  } //End Quit Button Hover Over
+  } //End Play Button Hover Over
   //
 }
 //

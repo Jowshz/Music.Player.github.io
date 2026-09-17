@@ -23,6 +23,10 @@ if (image1 == null) {
       return; // Exit early to prevent NullPointerException
     }
   }
+  if (EvilSkullWidth <= 0 || EvilSkullHeight <= 0) {
+    println("Error: Target display width/height is invalid or unpopulated.");
+    return;
+  }
   int imageWidth1 = image1.width;  // Hardcoded source image width
   int imageHeight1 = image1.height; // Hardcoded source image height
 

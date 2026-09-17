@@ -27,12 +27,15 @@ void musicSetup() {
   //
   for ( int i=0; i<numberOfSongs; i++ ) {
     file = musicDirectory + songName[i] + fileExtension_mp3;
+    playList[i] = minim.loadFile(file);
     if (playList[i] != null) {
       playListMetaData[i] = playList[i].getMetaData();
     }
   }
-  currentSong=0;
+  currentSong = 0;
   file = soundEffectsDirectory + soundEffect1 + fileExtension_mp3;
+  
+  soundEffects = new AudioPlayer[1]; // Allocates array before loading index 0
   soundEffects[0] = minim.loadFile( file );
   
 // Check each song in the playlist

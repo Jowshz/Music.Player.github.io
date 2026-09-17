@@ -1,10 +1,4 @@
-// Global Variables for Image & Display
-PImage image1;
-PImage errorImage;
-
-float EvilSkullX, EvilSkullY, EvilSkullWidth, EvilSkullHeight;
-float EvilSkullWidthAdjusted1, EvilSkullHeightAdjusted1;
-float offsetX, offsetY;
+/* Display Population Subprogram */
 
 void displayPopulation() {
   // DIV Population coordinates

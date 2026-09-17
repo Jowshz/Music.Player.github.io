@@ -13,10 +13,10 @@ void divPopulation() {
   play2Height = appHeight * 1.3/12;
   
   // Stop Button DIV
-  stopX = play1X + play1Width * 8.2/16;
-  stopY = play2Y + play2Height * 10.6/12;
-  stopWidth = play1Width * 1.3/16;
-  stopHeight = play2Height * 1.3/12;
+  stopX = play1X + play1Width; // Places the stop button immediately adjacent to the play button
+  stopY = play2Y;              // Aligns vertically with the play button
+  stopWidth = play1Width;      // Matches the play button width
+  stopHeight = play2Height;    // Matches the play button height
   
   // Mute Lines
   mute1X1 = soundX + soundWidth * 1/4;
@@ -310,29 +310,31 @@ void colourPopulation() {
   color purple1 = #7D60F5;
   color blue = #3277D6;
   color lildarkgray = #555555;
-  color darkgray = #000000;
+  color darkgray = #222222;
   color darkblue = #225396;
   //
   if ( nightMode == true) {
     resetBackground = resetBackgroundNight;
     resetInk = resetInkNight;
+    
     playColourBackground = darkgray;
     playColourSymbol = darkblue;
     playColourBackgroundActivated = darkblue;
-    playColourSymbolActivated = darkgray;
+    playColourSymbolActivated = color(150);
+    
     quitBackground = darkblue;
     quitBackgroundActivated = red;
     quitButtonInk = darkgray;
     titleInk = purple1;
-  } else
-  {
-    //
+  } else {
     resetBackground = resetBackgroundDay;
-    resetInk = black;
+    resetInk = resetInkDay;
+    
     playColourBackground = blue;
     playColourSymbol = lildarkgray;
     playColourBackgroundActivated = darkblue;
-    playColourSymbolActivated = darkgray;
+    playColourSymbolActivated = color(150);
+    
     quitBackground = white;
     quitBackgroundActivated = red;
     quitButtonInk = black;
